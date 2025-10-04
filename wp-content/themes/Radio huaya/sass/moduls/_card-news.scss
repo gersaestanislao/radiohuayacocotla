@@ -1,0 +1,376 @@
+// Importación de utilidades base
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+// Variables locales
+$boder-defaul: vars.$border-base-radio;
+
+// Variables locales de altura del carrusel
+// Ancho de card
+$width-card-lg: fn.rem(490);
+$width-card-sm: fn.rem(320);
+$width-card-xm: fn.rem(300);
+
+// Alto de imagen
+$height-img-lg: fn.rem(256);
+$height-img-xm: fn.rem(160);
+
+// Alto de imagen card de sólo imagen
+$height-img-lg--img: fn.rem(280);
+$height-img-xm--img: fn.rem(210);
+
+// Ancho de card de video
+/* stylelint-disable-next-line scss/dollar-variable-pattern */
+$width-cardVideo-lg: fn.rem(560);
+$height-cardVideo-lg: fn.rem(315);
+
+.card {
+  background-color: transparent;
+  border-radius: vars.$border-base-radio;
+  padding: 0.75rem 0.75rem 2rem;
+  transition: vars.$slow-transition;
+  width: $width-card-xm;
+
+  &--bg-dark {
+    background-color: vars.$color-primary
+  }
+
+  &:hover {
+    background-color: vars.$color-secondary;
+  }
+
+  @include mix.respond-to(sm) {
+    width: $width-card-sm;
+  }
+
+  @include mix.respond-to(md) {
+    padding: 1rem 1rem 2.5rem;
+    width: $width-card-lg;
+  }
+
+  &__media {
+    position: relative;
+  }
+
+  // Marco para enmarcar la imagen si se desea aplicar borde o sombra
+
+  &__image-frame {
+    height: $height-img-xm;
+
+    @include mix.respond-to(md) {
+      height: $height-img-lg;
+    }
+  }
+
+  // Controles superpuestos
+  &__controls {
+    display: flex;
+    gap: fn.rem(12);
+    position: absolute;
+    right: fn.rem(12);
+    top: fn.rem(12);
+    z-index: 2;
+  }
+
+  // Estilo base para botones (reutilizable)
+  &__btn {
+    align-items: center;
+    backdrop-filter: blur(6px);
+    background-color: rgba($color: #000000, $alpha: .3333);
+    border: none;
+    border-radius: fn.rem(4);
+    cursor: pointer;
+    display: flex;
+    display: none;
+    font-size: 0.8rem;
+    gap: fn.rem(12);
+    padding: fn.rem(4) fn.rem(8);
+    transition: vars.$slow-transition;
+
+    i {
+      font-size: 1.5rem;
+
+      &:hover {
+        color: vars.$color-accent;
+      }
+    }
+
+
+    &--like {
+      color: vars.$color-accent;
+    }
+
+    &--share {
+      color: vars.$color-white;
+      max-width: 14rem;
+    }
+
+    @include mix.respond-to(md) {
+      display: flex;
+      font-size: 0.9rem;
+      padding: fn.rem(9) fn.rem(22);
+    }
+  }
+
+  // Contenedor del reproductor de audio o video
+  .audio-player {
+    display: none;
+
+    @include mix.respond-to(md) {
+      display: flex;
+    }
+  } 
+
+  // Cuerpo textual de la card (contenido inferior)
+  &__body {
+    padding: 0 0.5rem;
+    height: fn.rem(150); 
+
+    @include mix.respond-to(md) {
+      padding: 1rem 1.5rem;
+      height: fn.rem(250);
+    }
+
+  }
+
+  // Título de la nota o entrada
+  &__title {
+    display: block;
+    margin-bottom: 1rem;
+    a {
+      text-decoration: none;
+      transition: all ease .4s;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    
+
+  }
+
+  // Título de la nota o entrada
+  &__descript {
+    display: none;
+
+    @include mix.respond-to(md) {
+      display: block;
+    }
+  }
+
+  // Enlace al contenido completo
+  &__link {
+    text-transform: uppercase;
+
+    i {
+      text-decoration: none;
+    }
+  }
+
+  // Card de sólo imagen
+  &__shadow {
+    background: linear-gradient(360deg, rgb(0 0 0 / 100%) 0%, rgb(0 0 0 / 0%) 100%);
+    border-radius: vars.$border-base-radio;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: vars.$slow-transition;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &__title--img {
+    color: vars.$color-white;
+  }
+
+  &__descript--img {
+    color: vars.$color-text;
+    display: none;
+    opacity: 1;
+    transition: vars.$moreSlow-transition;
+  }
+
+  &__body--img {
+    bottom: 1rem;
+    text-align: center;
+    height: auto;
+    left: 0;
+    margin: auto;
+    padding: 0 1rem;
+    position: absolute;
+    right: 0;
+    transition: vars.$slow-transition;
+    z-index: 4;
+
+    @include mix.respond-to(md) {
+      bottom: 2rem;
+      padding: 0 2rem;
+    }
+  }
+
+  &--img {
+    border: vars.$color-text 0.2rem solid;
+    border-radius: 0.47rem;
+    padding: 0;
+
+    &:hover {
+      .card__title--img {
+        color: vars.$color-text !important;
+      }
+
+      .card__shadow {
+        background: vars.$color-primary;
+      }
+
+      .card__descript--img {
+        @include mix.respond-to(md) {
+          display: block;
+          opacity: 1;
+        }
+      }
+
+      .card__body--img {
+        @include mix.respond-to(md) {
+          bottom: 4rem;
+        }
+      }
+    }
+  }
+
+  &__image-frame--img {
+    border: 0;
+    height: $height-img-xm--img;
+
+    @include mix.respond-to(md) {
+      height: $height-img-lg--img;
+    }
+  }
+
+  &__kind-type {
+    background-color: vars.$color-primary;
+    border: $boder-defaul solid vars.$color-text;
+    color: vars.$color-white;
+    font-weight: bold;
+    left: -1rem;
+    padding: 0.2rem 1rem;
+    position: absolute;
+    text-align: center;
+    top: -1rem;
+    z-index: 5;
+
+    @include mix.respond-to(md) {
+      left: -2rem;
+      top: 1rem;
+    }
+  }
+
+  // Card video
+  &--video {
+    border: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 19rem;
+
+    @include mix.respond-to(md) {
+      height: auto;
+      width: $width-cardVideo-lg;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    iframe {
+      border: $boder-defaul solid vars.$color-primary;
+      border-radius: vars.$border-base-radio;
+      height: 14rem;
+      width: 100%;
+
+      @include mix.respond-to(md) {
+        height: $height-cardVideo-lg;
+        width: 100%;
+      }
+    }
+  }
+
+  &__controls-content-video {
+    color: vars.$color-white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: auto;
+    justify-content: space-between;
+
+    @include mix.respond-to(md) {
+      align-content: flex-start;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .card__controls {
+      position: initial;
+    }
+  }
+
+  &__btn--video {
+    display: flex;
+  }
+
+  &__body--video {
+    padding: 0 0.5rem;
+    height: auto;
+
+    @include mix.respond-to(md) {
+      padding: 1rem 0;
+    }
+  }
+
+  &__title--video {
+    color: vars.$color-white;
+    font-weight: bold;
+  }
+
+
+  // Crad trasparente 
+  &--bg-light {
+    background-color: transparent;
+    color: vars.$color-white;
+    padding: 0 0 0.75rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #ffffff42;
+    border-radius: 0;
+
+
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    .card__body {
+        padding: 1.5rem 0 0;
+        height: auto;
+      }
+
+      @include mix.respond-to(md) {
+        padding: 0 ;
+      }
+
+    .card__link {
+      display: none;
+
+      @include mix.respond-to(md) {
+        display: inherit;
+      }
+    }
+
+  }
+
+  &--color-dark {
+    color: vars.$color-text;
+  }
+
+
+}

@@ -1,0 +1,224 @@
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+// Variables
+$border-btn: 0.2rem;
+
+// Botones flotantes
+
+.btn-floating {
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 1px 2px 5px 0 rgb(0 0 0 / 75%);
+  display: flex;
+  font-size: 1.25rem;
+  height: 5rem;
+  justify-content: center;
+  padding: 0.75rem;
+  position: fixed;
+  right: 1rem;
+  text-decoration: none;
+  width: 5rem;
+  z-index: 11;
+
+  @include mix.respond-to(md) {
+    right: 2rem;
+  }
+
+  &:hover {
+    background-color: vars.$color-primary;
+  }
+}
+
+// Botón en whatsapp
+
+.btn-whatsapp {
+  background-color: vars.$color-whatsapp;
+  bottom: 6.625rem;
+  color: vars.$color-white;
+
+  @include mix.respond-to(md) {
+    bottom: 10.625rem;
+  }
+
+  i {
+    font-size: 3.2rem;
+  }
+}
+
+// Botón en vivo
+
+.btn-radio {
+  background-color: vars.$color-accent;
+  bottom: 1.25rem;
+  color: vars.$color-text;
+  display: none;
+
+  @include mix.respond-to(md) {
+    bottom: 3.625rem;
+  }
+
+  i {
+    font-size: 2rem;
+  }
+}
+
+// Botónes generales
+
+.btn {
+  align-items: center;
+  border-radius: vars.$border-base-radio;
+  cursor: pointer;
+  display: flex;
+  font-size: vars.$font-size-btn-sm;
+  font-weight: bold;
+  height: 2.5rem;
+  justify-content: center;
+  text-decoration: none;
+  transition: vars.$slow-transition;
+  width: 100%;
+
+  @include mix.respond-to(md) {
+    font-size: vars.$font-size-btn-lg;
+    height: 3rem;
+  }
+
+  &--auto-widht {
+    padding: 0 1rem;
+    width: auto;
+
+    @include mix.respond-to(md) {
+      width: auto !important;
+    }
+  }
+
+  // Botón primario
+  &--primary {
+    background-color: vars.$color-primary;
+    border: $border-btn solid vars.$color-primary;
+    color: vars.$color-white;
+
+    &:hover {
+      background-color: vars.$color-text;
+      color: vars.$color-primary;
+      border: $border-btn solid vars.$color-primary;
+    }
+  }
+
+  // Botón secundario
+
+  &--secundary {
+    background-color: transparent;
+    border: $border-btn solid vars.$color-white;
+    color: vars.$color-white;
+
+    &:hover {
+      background-color: vars.$color-white;
+      color: vars.$color-text;
+    }
+  }
+
+  // Botón white
+
+  &--white {
+    background-color: vars.$color-white;
+    border: $border-btn solid vars.$color-white;
+    color: vars.$color-text;
+
+    &:hover {
+      background-color: transparent;
+      color: vars.$color-white;
+    }
+  }
+
+  // Botón secundario
+
+  &--dark {
+    background-color: transparent;
+    border: $border-btn solid vars.$color-text;
+    color: vars.$color-text;
+
+    &:hover {
+      background-color: vars.$color-text;
+      color: vars.$color-white;
+    }
+  }
+
+  &--icon {
+    i {
+      color: vars.$color-primary;
+      font-size: 1rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  //Extensión de boton
+  &--break {
+    max-width: 18rem;
+  }
+
+  @include mix.respond-to(md) {
+    font-size: vars.$font-size-btn-lg;
+    width: 15.813rem;
+  }
+}
+
+.link {
+  font-size: vars.$font-size-tool-sm;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  text-decoration: none;
+
+  @include mix.respond-to(md) {
+    font-size: vars.$font-size-tool-lg;
+  }
+
+  &--icon {
+    align-items: center;
+    display: flex;
+
+    i {
+      font-size: 1rem;
+      margin-left: 0.5rem;
+      transition: vars.$slow-transition;
+    }
+
+    &:hover {
+      i {
+        margin-left: 0.75rem;
+      }
+    }
+  }
+}
+
+.btn-close {
+  background-color: vars.$color-text;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.5rem;
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  i {
+    color: vars.$color-accent;
+    font-size: fn.rem(32);
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    i {
+      color: vars.$color-white;
+    }
+  }
+}
+
+input[type='text'] {
+  border: 3px solid vars.$color-text;
+  border-radius: $border-btn;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+}

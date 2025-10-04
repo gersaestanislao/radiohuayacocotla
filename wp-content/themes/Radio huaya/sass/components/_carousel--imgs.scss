@@ -1,0 +1,141 @@
+// Importación de utilidades base
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+
+.carrusel-img {
+  position: relative;
+
+  .owl-stage {
+    left: -1.5rem;
+    @include mix.respond-to(md) {
+      left: 0;
+    }
+  } 
+
+  .m-title__descript {
+    display: none;
+
+    @include mix.respond-to(md) {
+      display: initial ;
+    }
+  }
+
+  .m-title__btn {
+    display: none;
+  }
+
+  .m-title__btn--series {
+    display: flex;
+    max-width: 90%;
+  }
+
+  &__controls {
+    background: vars.$color-primary;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    color: vars.$color-white;
+    position: absolute;
+    top: 35%;
+    z-index: 9;
+    box-shadow: 0px 0px 12px -3px rgba(0,0,0,0.85);
+
+    @include mix.respond-to(md) {
+      height: 4rem;
+      width: 4rem;
+      top: 46%;
+      display: inherit;
+    }
+
+
+    i {
+      font-size: 1.5rem;
+         
+      @include mix.respond-to(md) {
+        font-size: 2rem;
+      }
+    }
+
+    &--prev {
+      left: 0.4rem;
+
+    @include mix.respond-to(md) {
+      left: 1rem;
+      }
+
+    }
+
+    &--next {
+      right: 0.2rem;
+
+    @include mix.respond-to(md) {
+      right: 2rem;
+      }
+
+    }
+}
+
+
+  .btn {
+    margin: 3rem 0 3rem;
+  }
+
+  .owl--img {
+    // .owl-stage {
+    //   margin-left: -1rem;
+
+    //   @include mix.respond-to(md) {
+    //     margin-left: 2rem;
+    //   }
+    // }
+
+
+    // Navegación: flechas laterales del carrusel
+    .owl-nav {
+      margin-top: fn.rem(40);
+      padding: 0;
+      text-align: center;
+
+      button {
+        border-radius: 50% !important;
+        font-size: 3rem !important;
+        height: 3.5rem;
+        line-height: 0;
+        margin: 0 0.5rem;
+        position: relative !important;
+        width: 3.5rem;
+
+        @include mix.respond-to(md) {
+          margin: 0 1.5rem;
+        }
+
+        span {
+          bottom: fn.rem(28);
+          color: vars.$color-text;
+          left: fn.rem(19);
+          position: absolute;
+        }
+      }
+    }
+
+    // Botones de navegación izquierda y derecha
+    .owl-prev,
+    .owl-next {
+      background-color: transparent;
+      border: 4px solid vars.$color-text !important;
+      box-shadow: 0 2px 5px 0 rgb(255 255 255 / 31%);
+      transition: all 0.4s ease;
+
+      &:hover {
+        background-color: vars.$color-text;
+        border: 4px solid vars.$color-text !important;
+
+        span {
+          color: white;
+        }
+      }
+    }
+  }
+}

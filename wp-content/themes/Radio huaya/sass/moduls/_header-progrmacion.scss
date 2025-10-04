@@ -1,0 +1,192 @@
+// Importación de utilidades base
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+$color-en-vivo: green;
+$espaciado-base: 1rem;
+
+// Módulo: Carrusel de programación
+.programacion-carousel {
+/*  display: flex;
+  overflow-x: auto;
+  gap: $espaciado-base;
+  scroll-snap-type: x mandatory;
+  padding: $espaciado-base;*/
+  width: 100%;
+  display: flex;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  box-shadow:  rgba(0, 0, 0, 0.5) 0px 2px 10px;
+  z-index: 22;
+ 
+ 
+  &__modul {
+  padding-left: 3rem ;
+  }
+
+ &__content {
+  width: 100%;
+  overflow: hidden;
+  height: 5.5rem;
+  padding: .5rem 0 0;
+   @include mix.respond-to(md) {
+    width: 68%;
+    padding: .5rem 0 0;
+   }
+ }
+
+ &__envivo {
+  display: none;
+  color: red;
+
+  &:hover {
+    color:vars.$color-text;
+  } 
+
+ }
+
+  &__estado--en-vivo {
+     display: inline-block;
+  }
+
+ &__titulo-modulo {
+    width: 12%;
+    background-color:gainsboro;
+    color: vars.$color-text;
+    display: none;
+
+     @include mix.respond-to(md) {
+        display: flex;
+        align-items: flex-start;
+        padding: 1rem 1rem 1rem 2rem; 
+        flex-direction: column;
+
+      h3 {
+        font-size: 1.7rem;
+        line-height: 1;
+      }
+
+     }
+  }
+
+  
+
+  &__item {
+     display: flex;
+     gap: .5rem;
+     padding: .7rem 3rem 0 1rem;
+     width: auto;
+
+
+    &:focus-within {
+      outline: 2px solid #000;
+    }
+  }
+
+  &__etiqueta {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem .5rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: vars.$color-white;
+
+    &--musica {
+      color: vars.$color-text;
+      background-color: vars.$color-musical;
+    }
+
+    &--informativo {
+      background-color: vars.$color-informativo;
+    }
+
+    &--avisos {
+      background-color: vars.$color-avisos;
+      color: vars.$color-text;
+    }
+
+    &--radio-revista {
+      background-color: vars.$color-revista;
+    }
+
+    &--novela {
+      background-color: vars.$color-novela;
+    }
+
+
+    &--contenido {
+      color: vars.$color-text;
+      background-color: vars.$color-contenido; 
+    }
+  }
+
+
+
+
+  &__hora {
+    font-size: 0.875rem;
+    color: vars.$color-text;
+    display: block;
+    line-height: 1;
+  }
+
+
+  &__titulo {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #222;
+  }
+
+  &__escucha-vivo {
+    background-color: vars.$color-primary;
+    display: none;
+    align-items: center;
+    width: 20%;
+ 
+    border-left: 1rem solid vars.$color-text;
+    padding: 0 0 0 2rem;
+
+    a {
+      color: white;
+      font-size: 1.4rem;
+    } 
+
+     @include mix.respond-to(md) {
+      display: flex;
+     }
+  }
+
+
+
+  .owl-nav {
+  
+    .owl-next,
+    .owl-prev 
+    {
+      position: absolute;
+      top: -.5rem;
+      right: 0;
+      width: 3.4rem;
+      height: 5.5rem;
+      background-image: url(./images/next.png) !important;
+      background-color: white !important;
+      background-size: 2.5rem !important;
+      background-position: center  !important;
+      background-repeat: no-repeat !important;
+      box-shadow: -1px 0px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 0px 5px 0px rgba(0,0,0,0.75);
+
+      span {
+        display: none;
+      }
+    }
+
+    .owl-prev {
+      left: 0;
+      background-image: url(./images/prev.png) !important;
+    }
+  }
+}

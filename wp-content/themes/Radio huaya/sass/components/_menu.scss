@@ -1,0 +1,194 @@
+/* stylelint-disable selector-class-pattern */
+
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+/// Componente del menú de navegación
+/// @group componentes
+/// @access public
+.header__menu {
+  /// Menú móvil desplegable
+  /// Oculto por defecto, se muestra con `.menu--visible`
+  /// @name header__menu--mobile
+  /// @responsive Sí, se oculta en versión desktop con media query
+  &--mobile {
+    background-color: vars.$color-white;
+    display: none;
+    flex-direction: column;
+    left: 0;
+    list-style: none;
+    opacity: 0;
+    overflow: hidden;
+    padding: 5rem vars.$spacing-md;
+    position: absolute;
+    top: 0;
+    transition:
+      max-height 5s ease,
+      opacity 5s ease,
+      visibility 5s ease;
+    visibility: hidden;
+    width: 100%;
+    z-index: 10;
+
+    @include mix.respond-to(md) {
+      display: none;
+    }
+
+    /// Ítems del menú móvil
+    li {
+      border-bottom: 0.05rem grey dotted;
+      margin: 1rem 0;
+      padding-bottom: 1rem;
+      text-align: center;
+
+      /// Enlaces dentro del menú móvil
+      a {
+        color: vars.$color-text;
+        display: block;
+        font-weight: bold;
+        text-decoration: none;
+        transition: vars.$slow-transition;
+        width: 100%;
+
+        &:hover {
+          color: vars.$color-primary;
+        }
+      }
+    }
+  }
+
+  /// Menú de resdes sociales
+  &--mobile-redes {
+    ul {
+      display: inline-flex;
+      justify-content: space-evenly;
+      list-style: none;
+      width: 80%;
+    }
+
+    li {
+      border-bottom: 0;
+
+      i {
+        color: vars.$color-text;
+        font-size: 1.75rem;
+        transition: vars.$slow-transition;
+
+        &:hover {
+          color: vars.$color-primary;
+        }
+      }
+    }
+  }
+
+  /// Estado visible del menú móvil
+  /// Aplica transición suave de visibilidad
+  /// @name menu--visible
+  &.menu--visible {
+    height: 100vh;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /// Menú para escritorio
+  /// Solo se muestra a partir del breakpoint definido
+  /// @name header__menu--desktop
+  /// @responsive Sí
+  &--desktop {
+    display: none;
+
+    @include mix.respond-to(md) {
+      display: flex;
+      gap: 1rem;
+    }
+
+    /// Ítems del menú de escritorio
+    li.header__menu--desktop-item {
+      list-style: none;
+      margin: 0;
+
+      @include mix.respond-to(xxl) {
+        padding: 0 0.25rem;
+      }
+
+      /// Enlaces visibles con texto claro
+      a {
+        color: vars.$color-text;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-decoration: none;
+        transition: vars.$slow-transition;
+
+        &:hover {
+          color: vars.$color-secondary;
+        }
+
+        &.active {
+          border-bottom: 0.2rem solid vars.$color-white;
+        }
+
+        &.btn--main {
+          background-color: vars.$color-text;
+          border: 0.2rem solid vars.$color-text;
+          border-radius: vars.$border-base-radio;
+          color: vars.$color-white;
+          padding: 0.5rem 1rem;
+          text-decoration: none;
+          transform-origin: vars.$slow-transition;
+
+          &:hover {
+            background-color: vars.$color-white;
+            color: vars.$color-text;
+          }
+        }
+      }
+    }
+
+    /// Ítems del menú de escritorio buscador
+    li.header__menu--desktop-item--search {
+      li {
+        list-style: none;
+
+        i {
+          color: vars.$color-text;
+          font-size: 1.7rem;
+          transition: vars.$slow-transition;
+
+          &:hover {
+            color: vars.$color-secondary;
+          }
+        }
+      }
+    }
+
+    /// Ítems del menú de escritorio redes sociales
+    li.header__menu--desktop-item--redes {
+      ul {
+        display: none;
+        padding: 0 3rem;
+
+        @include mix.respond-to(lg) {
+          display: inline-flex;
+        }
+
+        li {
+          display: inline-flex;
+          justify-content: space-evenly;
+          list-style: none;
+          padding: 0 0.5rem;
+
+          i {
+            color: vars.$color-text;
+            font-size: 1.7rem;
+            transition: vars.$slow-transition;
+
+            &:hover {
+              color: vars.$color-secondary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

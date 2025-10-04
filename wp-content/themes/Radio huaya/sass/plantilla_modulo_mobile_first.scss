@@ -1,0 +1,32 @@
+/// =============================================
+/// Módulo base: [NOMBRE DEL COMPONENTE]
+/// @description Plantilla base Mobile First con breakpoints
+/// @author Gersa
+/// =============================================
+
+.[componente] {
+  background-color: #f5f5f5;
+  font-size: 1rem;
+
+  // Estilos base para móvil (Mobile First)
+  padding: 1rem;
+
+  // Tablet (≥768px)
+  @include respond-to(md) {
+    font-size: 1.2rem;
+    padding: 2rem;
+  }
+
+  // Desktop (≥1024px)
+  @include respond-to(lg) {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // Desktop grande (≥1280px)
+  @include respond-to(xl) {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+}

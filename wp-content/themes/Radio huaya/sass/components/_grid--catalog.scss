@@ -1,0 +1,86 @@
+// Importación de utilidades base
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+.contenedor-cards {
+
+
+  &__filtros {
+    display: none;
+
+     @include mix.respond-to(md) {
+      display: initial;
+    }
+  }
+
+    &__filtros--movil {
+        
+    .controls-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.2rem .5rem;
+
+        button {
+           padding: .25rem .7rem;
+           border: 1px solid black;
+
+           &:focus {
+           background: vars.$color-primary;
+           }
+        }
+
+    }
+
+     @include mix.respond-to(md) {
+          display: none;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+
+    @media (width >= 1024px) {
+      grid-template-columns: 1fr 5fr;
+    }
+  }
+
+  .card {
+    width: auto;
+  }
+
+  .card__descript {
+    display: none;
+  }
+
+  &__lista {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (width >= 768px) {
+     
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (width >= 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__lista--twocolumns {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (width >= 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (width >= 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

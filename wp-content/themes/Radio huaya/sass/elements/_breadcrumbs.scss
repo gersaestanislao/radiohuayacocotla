@@ -1,0 +1,29 @@
+// Importación de utilidades base
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+// variables  locales
+
+// Contenedor de metainformación (fecha, vistas)
+
+.breadcrumbs {
+  color: vars.$color-text;
+  font-size: 0.85rem;
+  margin: 1rem 0 3rem;
+  width: 100%;
+
+  @include mix.respond-to(md) {
+    font-size: 1rem;
+  }
+
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+    transition: vars.$slow-transition;
+
+    &:hover {
+      color: vars.$color-primary;
+    }
+  }
+}

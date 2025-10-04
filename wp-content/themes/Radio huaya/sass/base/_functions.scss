@@ -1,0 +1,7 @@
+/// Convierte píxeles a rem
+/// @param {Number} $px - Valor en píxeles
+/// @param {Number} $base - Tamaño base (por defecto 16px)
+/// @return {Number} valor en rem
+@function rem($px, $base: 16) {
+  @return ($px / $base) * 1rem;
+}

@@ -1,0 +1,54 @@
+// Importación de utilidades base
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+// variables  locales
+$cat-1:#ff6900;
+$cat-2:  #0f6131;
+$cat-3: vars.$color-accent;
+$cat-4: vars.$color-yellow-1;
+$cat-5: vars.$color-yellow-2;
+
+.categories {
+  border: 0.3rem solid transparent;
+  border-radius: 0.3rem;
+  color: vars.$color-text;
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top: 0.2rem;
+  padding: 0.1rem 0.5rem;
+  text-decoration: none;
+
+  &:hover {
+    border: 0.3rem solid vars.$color-text;
+  }
+
+  &__cat-1 {
+    background-color: $cat-1;
+    color: vars.$color-white;
+    transition: all ease .4s;
+
+    &:hover{
+      background-color: $cat-2;
+    }
+  }  
+     
+
+  &__cat-2 {
+    background-color: $cat-2;
+  }
+
+  &__cat-3 {
+    background-color: $cat-3;
+  }
+
+  &__cat-4 {
+    background-color: $cat-4;
+  }
+
+  &__cat-5 {
+    background-color: $cat-5;
+  }
+}

@@ -1,0 +1,35 @@
+/* stylelint-disable selector-class-pattern */
+
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+// Variables locales de altura del carrusel
+
+.catalog {
+  @include mix.respond-to(md) {
+   max-width: fn.rem(1440);
+   margin: auto;
+   padding-top: 2rem;
+
+   &__eyetcher{
+    text-align: center;
+    margin: auto;
+    max-width: fn.rem(990);
+    margin-bottom: 5rem;
+
+   }
+
+   &__eyetcherTitle{
+    font-size: 2rem;
+    text-transform: capitalize;
+
+    @include mix.respond-to(md) {
+      font-size: 4rem;
+    }
+   }
+
+   &__eyetcherDescript{}
+                       
+}
+}

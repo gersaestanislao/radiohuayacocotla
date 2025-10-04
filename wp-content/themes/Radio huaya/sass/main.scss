@@ -1,0 +1,24 @@
+// Carga de base
+@use 'base/helpers';
+@use 'base/reset';
+@use 'base/variables' as vars;
+@use 'base/mixins' as mix;
+@use 'base/fonts';
+
+// Carga los contenderores de forma decentralizada, categorias, textos, botones, links
+@use 'elements';
+
+// Carga los contenderores de forma decentralizada, section, articles, images
+@use 'moduls';
+
+// Carga los componentes de forma decentralizada
+@use 'components';
+
+// Carga los contenderores de forma decentralizada, section, articles, images
+@use 'layouts';
+
+body {
+  color: vars.$color-text;
+  font-family: vars.$font-base;
+  margin: 0;
+}

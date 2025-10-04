@@ -1,0 +1,117 @@
+// Importación de utilidades base
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+// Variables locales
+$color-active: #00c227;
+
+.program-card {
+  background-color: white;
+  border: 1px solid #eee;
+  display: flex;
+  width: fn.rem(135);
+  height: 6rem;
+
+  @include mix.respond-to(md) {
+    height: 10rem;
+    width: auto;
+  }
+
+  &__tag {
+    align-items: center;
+    color: vars.$color-text;
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: bold;
+    justify-content: center;
+    padding: 0 0 0.25rem;
+    text-align: center;
+    transform: rotate(180deg);
+    writing-mode: vertical-rl;
+
+    @include mix.respond-to(md) {
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+  }
+
+  &__tag--avisos {
+    background-color: vars.$color-avisos;
+  }
+
+  &__tag--musica {
+    background-color: vars.$color-musical;
+  }
+
+  &__tag--novela {
+    background-color: vars.$color-novela;
+  }
+
+  &__tag--informativo {
+    background-color: vars.$color-informativo ;
+  }
+
+  &__tag--contenido {
+    background-color: vars.$color-contenido;
+  }
+
+  &__tag--radio-revista {
+    background-color: vars.$color-revista;
+  }
+
+
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 0 0 0.5rem;
+
+    @include mix.respond-to(md) {
+      padding: 1rem;
+    }
+  }
+
+  &__time {
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+
+    @include mix.respond-to(md) {
+      font-size: 1rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 0.5rem;
+
+    @include mix.respond-to(md) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__live {
+    align-items: center;
+    display: flex;
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin: 0;
+
+    @include mix.respond-to(md) {
+      font-size: 1rem;
+    }
+
+    & > .program-card__dot {
+      background-color: $color-active;
+      border-radius: 50%;
+      display: inline-block;
+      height: 10px;
+      margin-right: 0.5rem;
+      width: 10px;
+    }
+  }
+}

@@ -1,0 +1,139 @@
+// Importación de utilidades base
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+// Variables locales de altura del carrusel
+$height-lg: fn.rem(620);
+$height-sm: fn.rem(520);
+
+// Estilos del contenedor principal de Owl Carousel
+.owl--hero {
+  margin-top: 4rem;
+
+  @include mix.respond-to(md) {
+    margin-top: 8rem;
+  }
+
+  .item {
+    background-position: center;
+    background-size: cover;
+    height: $height-sm;
+    position: relative;
+
+    // Altura mayor en pantallas medianas en adelante
+    @include mix.respond-to(md) {
+      height: $height-lg;
+    }
+  }
+}
+
+// Contenedor interno del contenido del carrusel
+.carousel {
+  &__content {
+    align-items: center;
+    background: rgb(0 0 0 / 56%); // Fondo semitransparente oscuro
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding: 0 1rem;
+    position: absolute;
+    width: 100%;
+  }
+
+  &__title {
+    margin: 0; // Elimina margen por defecto
+  }
+
+  &__desc {
+    left: 0;
+    margin: 0 auto 2rem;
+    right: 0;
+    width: 95%;
+
+    @include mix.respond-to(lg) {
+      width: 70%; // Reduce ancho en pantallas grandes
+    }
+  }
+
+  // Navegación: flechas laterales del carrusel
+  .owl-nav {
+    bottom: 42%;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    width: 85%;
+
+    button {
+      border-radius: 50% !important;
+      font-size: 3rem !important;
+      height: 3.5rem;
+      line-height: 0;
+      position: relative !important;
+      width: 3.5rem;
+
+      span {
+        color: white;
+        left: 20px;
+        position: absolute;
+        top: -12px;
+      }
+    }
+  }
+
+  // Botones de navegación izquierda y derecha
+  .owl-prev,
+  .owl-next {
+    background-color: transparent;
+    border: 2px solid vars.$color-white !important;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 31%);
+    transition: all 0.4s ease;
+
+    &:hover {
+      border: 2px solid vars.$color-primary !important;
+      box-shadow: 0 2px 10px 0 rgb(0 0 0 / 61%);
+
+      span {
+        color: white;
+      }
+    }
+  }
+
+  // Paginación (puntos debajo del carrusel)
+  .owl-dots {
+    bottom: 2rem;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+
+    span {
+      display: none !important; // Oculta el número del punto
+    }
+
+    button {
+      height: 0.75rem;
+      width: 3rem;
+
+      &.owl-dot {
+        background-color: transparent;
+        border: white solid 2px;
+        margin: 0 0.5rem;
+        transition: all 0.4s ease;
+
+        &:hover {
+          background-color: rgba(vars.$color-white, 0.7);
+        }
+      }
+
+      &.active {
+        background-color: rgba(vars.$color-text, 0.7);
+        border: vars.$color-primary solid 0.1rem;
+        cursor: default;
+      }
+    }
+  }
+}

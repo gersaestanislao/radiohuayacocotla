@@ -1,0 +1,18 @@
+// Importación de utilidades base
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+// variables  locales
+
+// Contenedor de metainformación (fecha, vistas)
+.meta-posts {
+  display: flex;
+  gap: fn.rem(16);
+  padding: vars.$spacing-sm 0;
+
+  // Contenedor de metainformación (fecha, vistas)
+  &--bg-dark {
+    color: vars.$color-white;
+  }
+}

@@ -1,0 +1,110 @@
+/* ==========================================================================
+   RESET BASE - Accesibilidad + Consistencia
+   Basado en Modern CSS Reset + recomendaciones A11Y
+   https://www.joshwcomeau.com/css/custom-css-reset/
+   https://github.com/hankchizljaw/modern-css-reset
+========================================================================== */
+
+/// Reset básico accesible y moderno
+/// @group reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  font-size: 16px;
+}
+
+/// Mejora tipografía para accesibilidad
+html {
+  font-size: 100%;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  text-rendering: optimizespeed;
+}
+
+/// Mejora legibilidad y accesibilidad de enlaces
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  transition: color 0.2s;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+/// Mejora inputs
+input,
+button,
+textarea,
+select {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  outline: none;
+}
+
+/// Imágenes responsivas por defecto
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/// Elimina estilos por defecto de listas
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+ul,
+ol {
+  list-style-position: inside;
+}
+
+/// Mejora la forma de evitar scroll accidental
+body:focus-within {
+  scroll-behavior: smooth;
+}
+
+/// Respeta reducción de movimiento
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+hr {
+  opacity: .33333;
+}

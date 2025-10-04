@@ -1,0 +1,60 @@
+/* stylelint-disable selector-class-pattern */
+
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+// Variables locales de altura del carrusel
+$spacing-sectionsm-desk: fn.rem(72);
+$spacing-sectionsm-mov: fn.rem(18);
+$bg-grey: #efefef;
+
+.w-section {
+  padding: 4rem 1rem; 
+
+  @include mix.respond-to(md) {
+    padding: 6rem 2rem;
+  }
+
+  &--content-inter-sm {
+    padding: $spacing-sectionsm-mov;
+
+    @include mix.respond-to(md) {
+      padding: 3rem;
+    }
+  }
+
+  &--content-carrusel {
+    padding-right: 0;
+
+    @include mix.respond-to(md) {
+      padding: 9rem 0 9rem 3rem;
+    }
+  }
+
+  &--content-inter {
+    margin:3rem 2rem;
+    padding: 2rem 0;
+
+    @include mix.respond-to(md) {
+      margin: 5rem 0 2rem; 
+      padding: 2rem;
+    }
+
+     @include mix.respond-to(lg) {
+      margin: 2rem 3% 2rem;
+     }
+  }
+
+  &--bg-dark {
+    background-color: vars.$color-text;
+  }
+
+  &--bg-light {
+    background-color: white;
+  }
+
+  &--bg-grey {
+    background-color: vars.$color-bg;
+  }
+}

@@ -1,0 +1,90 @@
+/* stylelint-disable selector-class-pattern */
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+// Variables locales
+$tab-active: vars.$color-primary;
+
+.tabs {
+  width: 100%;
+
+  &__content {
+    border-bottom: 0.2rem solid vars.$color-text;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    justify-content: space-between;
+    padding-bottom: 0.75rem;
+    width: 100%;
+  }
+
+  @include mix.respond-to(md) {
+    gap: 0.5rem;
+  }
+
+  &__tab {
+    background-color: vars.$color-text;
+    border: none;
+    border-radius: 0.25rem;
+    color: vars.$color-white;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    padding: 0.75rem 0;
+    transition: background-color 0.3s ease;
+    width: 13%;
+
+    @include mix.respond-to(md) {
+      width: 13.7%;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: vars.$color-primary;
+    }
+
+    p {
+      display: none;
+
+      @include mix.respond-to(md) {
+        display: block;
+      }
+    }
+
+    small {
+      display: block;
+
+      @include mix.respond-to(md) {
+        display: none;
+      }
+    }
+
+    &[aria-selected='true'] {
+      background-color: $tab-active;
+      border: 2px solid vars.$color-text;
+      color: vars.$color-white;
+      position: relative;
+
+      &::after {
+        background-color: vars.$color-text;
+        bottom: fn.rem(-23);
+        content: '';
+        height: 0.4rem;
+        position: absolute;
+        right: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  &__panel {
+    flex-basis: 100%;
+    margin: 1rem 0;
+    padding: 0;
+
+    @include mix.respond-to(md) {
+      margin: 4rem 0 2rem;
+    }
+  }
+}

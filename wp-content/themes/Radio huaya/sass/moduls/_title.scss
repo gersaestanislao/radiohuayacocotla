@@ -1,0 +1,57 @@
+// Importación de utilidades base
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+// Variables locales de altura del carrusel
+.m-title {
+  margin-bottom: fn.rem(22);
+  margin-right: 1rem;
+
+  @include mix.respond-to(md) {
+    margin-bottom: fn.rem(48);
+    max-width: 60%;
+  }
+
+  &--news {
+    margin: 0 auto 1.5rem ;
+    max-width: 100%;
+    padding-right: 2rem ;
+
+    @include mix.respond-to(md) {
+      max-width: 90%;
+      margin: 0 auto 3rem ;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0.5rem;
+  }
+
+  &__descript {
+    margin-bottom: 2rem;
+  }
+
+  &__btn {
+    margin-bottom: 3rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &--bg-dark {
+    h2,
+    p {
+      color: vars.$color-white;
+    }
+  }
+
+  &--bg-light {
+    h2,
+    p {
+      color: vars.$color-text;
+    }
+  }
+}

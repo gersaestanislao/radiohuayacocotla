@@ -1,0 +1,300 @@
+/* stylelint-disable selector-class-pattern */
+
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+// Variables locales de altura del carrusel
+
+.entry {
+  width: 100%;
+
+  @include mix.respond-to(lg) {
+    padding-right: 4rem;
+    width: 65%;
+  }
+
+  &__header {
+    position: relative;
+  }
+
+  &__controls {
+   position: initial;
+   display: flex !important;
+  }
+
+  &__shadow {
+    background-color: vars.$color-text;
+    height: 100%;
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &--audios {
+    @include mix.respond-to(md) {
+      padding-right: 4rem;
+      width: 45%;
+    }
+  }
+
+  &--full {
+    @include mix.respond-to(md) {
+      margin: auto;
+      max-width: 1280px;
+      padding-right: 0;
+      width: 100%;
+    }
+  }
+
+
+
+  &__title {
+    font-size: vars.$font-size-title-sm;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    @include mix.respond-to(md) {
+      font-size: vars.$font-size-title-lg;
+    }
+  }
+
+  &__title--audio {
+    color: vars.$color-white;
+    text-shadow: 1px 1px 2px vars.$color-text;
+  }
+
+  &__tags {
+    margin-bottom: 0.75rem;
+
+    @include mix.respond-to(md) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__image {
+    height: 16rem;
+    width: 100%;
+
+    @include mix.respond-to(md) {
+      height: 25rem;
+    }
+  }
+
+  &__image--audio {
+    align-items: flex-end;
+    display: flex;
+    height: 16rem;
+    padding: 1rem;
+    width: 100%;
+
+    @include mix.respond-to(md) {
+      height: 17rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__image--full {
+    align-items: center;
+    display: flex;
+    height: 16rem;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+
+    @include mix.respond-to(md) {
+      height: 25rem;
+      padding: 2rem;
+    }
+  }
+
+  &__interactions,
+  &__footer {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin: 1rem 0 2rem;
+  }
+
+  &__likes {
+    background: #eee;
+    border-radius: 0.3rem;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  .btn--gray {
+    background: #222;
+    border: none;
+    border-radius: 0.25rem;
+    color: white;
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  &__header--audio {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__content {
+    line-height: 1.5;
+    margin: 2rem 0;
+
+    a {
+      color: green;
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    font-size: vars.$font-size-body-sm;
+
+    @include mix.respond-to(md) {
+      font-size: vars.$font-size-body-lg;
+    }
+  }
+
+  h3 {
+    font-family: vars.$font-base;
+    font-size: vars.$font-size-body-sm;
+    font-weight: bold;
+    margin: 1.5rem 0 0.5rem;
+
+    @include mix.respond-to(md) {
+      font-size: vars.$font-size-body-lg;
+    }
+  }
+
+  h2 {
+    font-size: vars.$font-size-titlesm-sm;
+    font-weight: bold;
+    margin-top: 1rem;
+
+    @include mix.respond-to(md) {
+      font-size: vars.$font-size-titlesm-lg;
+    }
+  }
+
+  ul {
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.3rem;
+    }
+  }
+
+  blockquote {
+    background-color: vars.$color-bg;
+    font-family: vars.$font-heading;
+    font-size: vars.$font-size-titlesm-sm;
+    font-weight: bold;
+    margin: 2rem 0;
+    padding: 1rem;
+
+    @include mix.respond-to(md) {
+      font-size: vars.$font-size-titlesm-lg;
+    }
+  }
+}
+
+.related {
+  background-color: vars.$color-text;
+  border-radius: vars.$border-base-radio;
+  color: white;
+  position: relative;
+  padding: 1rem;
+  width: 100%;
+
+
+  @include mix.respond-to(lg) {
+    align-self: start; // útil si está dentro de un flex container
+    padding: 3rem;
+    position: sticky;
+    top: 9rem; // margen superior al fijarse
+    width: 33%;
+    z-index: 7;
+  }
+
+  &__select {
+
+      position: relative;
+      margin: .5rem 0 1rem;
+
+     @include mix.respond-to(md) {
+       position: absolute;
+      top: 2.7rem;
+      right: 2rem;
+     }
+  }
+
+
+  &--audios {
+    background-color: vars.$color-primary;
+
+    @include mix.respond-to(md) {
+      margin-top: 0;
+      padding-right: 4rem;
+      width: 55%;
+    }
+  }
+
+  h2 {
+    font-size: vars.$font-size-titlesm-sm;
+    font-weight: bold;
+    margin-bottom: 1rem;
+
+    @include mix.respond-to(md) {
+      font-size: vars.$font-size-titlesm-lg;
+    }
+  }
+
+  &__item {
+    margin-bottom: 3rem;
+
+    @include mix.respond-to(md) {
+      margin-bottom: 4rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item--audio {
+    margin-bottom: 1rem;
+
+    @include mix.respond-to(md) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__frame {
+    height: 10rem;
+    margin-bottom: 1rem;
+    max-width: 300px;
+    width: 100%;
+  }
+
+  &__link {
+    color: white;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+
+    &:hover {
+      color: vars.$color-primary;
+      text-decoration: none;
+    }
+  }
+
+  &__audio-descript--audio {
+    font-family: vars.$font-base;
+  }
+}

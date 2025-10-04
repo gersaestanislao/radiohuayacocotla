@@ -1,0 +1,103 @@
+// Importación de utilidades base
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+// variables locales
+$contoles: #9dbf21;
+
+.audio-player {
+  align-items: center;
+  border-radius: fn.rem(8);
+  bottom: 1rem;
+  display: flex;
+  gap: fn.rem(12);
+  left: 0;
+  margin: auto;
+  max-width: 100%; // se adapta a su contenedor
+  position: absolute;
+  right: 0;
+  width: 95%;
+
+  &--audio {
+    margin-top: 0.5rem;
+    position: inherit;
+    width: 100%;
+  }
+
+  &__play {
+    align-items: center;
+    background-color: $contoles; // verde llamativo
+    border: none;
+    border-radius: 50%;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    flex-shrink: 0;
+    font-size: fn.rem(16);
+    height: fn.rem(36);
+    justify-content: center;
+    width: fn.rem(36);
+  }
+
+  &__progress {
+    appearance: none;
+    background-color: #dcdcdc;
+    border-radius: fn.rem(3);
+    cursor: pointer;
+    flex-grow: 1;
+    height: fn.rem(6);
+    width: fn.rem(30);
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      height: 0;
+      width: 0;
+    }
+
+    &::-moz-range-thumb {
+      height: 0;
+      width: 0;
+    }
+  }
+
+  &__time {
+    color: $contoles; // verde
+    font-size: fn.rem(14);
+    min-width: fn.rem(40);
+    text-align: right;
+  }
+
+  &__volume-icon {
+    color: $contoles;
+    font-size: fn.rem(16);
+  }
+
+  &__volume {
+    appearance: none;
+    background-color: $contoles;
+    border-radius: fn.rem(3);
+    cursor: pointer;
+    height: fn.rem(6);
+    width: fn.rem(20);
+
+    @include mix.respond-to(md) {
+      min-width: fn.rem(58);
+    }
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      height: 0;
+      width: 0;
+    }
+
+    &::-moz-range-thumb {
+      height: 0;
+      width: 0;
+    }
+  }
+
+  &__element {
+    display: none; // el <audio> original queda oculto
+  }
+}

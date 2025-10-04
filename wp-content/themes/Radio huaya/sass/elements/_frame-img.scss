@@ -1,0 +1,28 @@
+// Importación de utilidades base
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+// variables  locales
+// Variables locales
+$boder-defaul: vars.$border-base-radio;
+
+// Contenedor de metainformación (fecha, vistas)
+
+.frame-img {
+  border: $boder-defaul vars.$color-text solid;
+  border-radius: vars.$border-base-radio;
+  overflow: hidden;
+  position: relative;
+  background-color: vars.$color-text;
+
+  img {
+    height: 100%;
+    opacity: .9 !important;
+    inset: 0;
+    object-fit: cover; // hace que se comporte como fondo
+    object-position: center center; // ← centra horizontal y vertical
+    position: absolute;
+    width: 100%;
+  }
+}

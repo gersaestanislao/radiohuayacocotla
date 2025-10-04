@@ -1,0 +1,193 @@
+@use '../base/functions' as fn;
+
+/// Tipografía principal para textos y títulos
+/// @group tipografia
+$font-base: 'Roboto', sans-serif;
+
+/// Tipografía secundaria para encabezados
+/// @group tipografia
+$font-heading: 'Oswald', sans-serif;
+
+/// Tamaño base de fuente
+/// @group tipografia
+$font-size-base: 1rem;
+
+/// Tamaño de tipografia display móvil
+/// @group tipografia
+$font-size-display-sm: 3.5rem;
+
+/// Tamaño de tipografia display desktop
+/// @group tipografia
+$font-size-display-lg: 6.75rem;
+
+/// Tamaño de tipografia título móvil
+/// @group tipografia
+$font-size-title-sm: 1.75rem;
+
+/// Tamaño de tipografia title desktop
+/// @group tipografia
+$font-size-title-lg: 3.063rem;
+
+/// Tamaño de tipografia título-sm móvil
+/// @group tipografia
+$font-size-titlesm-sm: 1.375rem;
+
+/// Tamaño de tipografia título-lg desktop
+/// @group tipografia
+$font-size-titlesm-lg: 1.875rem;
+
+/// Tamaño de tipografia parrafos móvil
+/// @group tipografia
+$font-size-body-sm: 1rem;
+
+/// Tamaño de tipografia parrafos desktop
+/// @group tipografia
+$font-size-body-lg: 1.25rem;
+
+/// Tamaño de tipografia parrafos letras grande móvil
+/// @group tipografia
+$font-size-bodylg-sm: 1.2rem;
+
+/// Tamaño de tipografia parrafos letra grande desktop
+/// @group tipografia
+$font-size-bodylg-lg: 1.8rem;
+
+/// Tamaño de tipografia herramientas móvil
+/// @group tipografia
+$font-size-tool-sm: 0.75rem;
+
+/// Tamaño de tipografia herramientas desktop
+/// @group tipografia
+$font-size-tool-lg: 1rem;
+
+/// Tamaño de tipografia btnr móvil
+/// @group tipografia
+$font-size-btn-sm: 1rem;
+
+/// Tamaño de tipografia btnr desktop
+/// @group tipografia
+$font-size-btn-lg: 1.2rem;
+
+/// Altura de línea base
+/// @group tipografia
+$line-height-base: 1.5;
+
+/// Color programa músical
+/// @group colores
+$color-musical: #fef55c;
+
+/// Color programa de contenido
+/// @group colores
+$color-contenido: #ff7d00;
+
+/// Color programa informativo
+/// @group colores
+$color-informativo: #4196af;
+
+/// Color programa de novelas
+/// @group colores
+$color-novela: #d285b7;
+
+/// Color programa avisos
+/// @group colores
+$color-avisos: #a6a6a6;
+
+/// Color programa radio revista
+/// @group colores
+$color-revista: #459831;
+
+/// Color principal del texto
+/// @group colores
+$color-text: #000;
+
+/// Color secundario
+/// @group colores
+$color-secondary: #9dbf21;
+
+/// Color principal del texto blanco
+/// @group colores
+$color-white:#fefacd;
+
+/// Color principal de elementos secundarios
+/// @group colores
+$color-primary: #019640;
+
+/// Color de énfasis (botones, enlaces)
+/// @group colores
+$color-accent: #ffeb3b;
+
+/// Color de énfasis (botones, enlaces)
+/// @group colores
+$color-yellow-1: #fef373;
+
+/// Color de énfasis (botones, enlaces)
+/// @group colores
+$color-yellow-2: #fefacd;
+
+/// Color asociado a botón de WhatsApp
+/// @group colores
+$color-whatsapp: #25d366;
+
+/// Color programa avisos
+/// @group colores
+$color-bg: #efefef;
+
+/// Espaciado extra pequeño
+/// @group espaciado
+$spacing-xs: 0.25rem;
+
+/// Espaciado pequeño
+/// @group espaciado
+$spacing-sm: 0.5rem;
+
+/// Espaciado medio (base)
+/// @group espaciado
+$spacing-md: 1rem;
+
+/// Espaciado grande
+/// @group espaciado
+$spacing-lg: 2rem;
+
+/// Radio de borde pequeño
+/// @group bordes
+$radius-sm: 0.25rem;
+
+/// Radio de borde medio
+/// @group bordes
+$radius-md: 0.5rem;
+
+/// Borde base para elementos con borde
+/// @group bordes
+$border-base: 1px solid $color-text;
+
+/// Borde base para elementos con borde radio
+/// @group bordes
+$border-base-radio: 0.22rem;
+
+/// Breakpoint para móviles pequeños
+/// @group breakpoints
+$breakpoint-sm: 480px;
+
+/// Breakpoint para tablets
+/// @group breakpoints
+$breakpoint-md: 768px;
+
+/// Breakpoint para escritorio
+/// @group breakpoints
+$breakpoint-lg: 1024px;
+
+/// Breakpoint para escritorio grande
+/// @group breakpoints
+$breakpoint-xl: 1280px;
+
+/// Animación
+/// @group animaciones
+$slow-transition: 0.4s ease all;
+
+/// Animación
+/// @group animaciones
+$moreSlow-transition: 1s ease all;
+
+// opacity balck
+
+$opacity-70: rgb(0 0 0 / 70%);

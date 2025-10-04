@@ -1,0 +1,73 @@
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+.mixitup-page-list {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+
+   @include mix.respond-to(md) {
+      justify-content: flex-end;
+    }
+
+    button {
+      padding: 0 1rem;
+      cursor: pointer;
+      transition: all ease .4s;
+
+      &:hover {
+        color: vars.$color-secondary;
+      }
+    }
+
+    [data-page] {
+      font-size: 1.8rem;
+      text-decoration: underline;
+    }
+
+    .mixitup-control-prev,
+    .mixitup-control-next,
+
+    {
+      text-decoration: none;
+      font-size: 2rem;
+      color: vars.$color-primary;
+      font-size: 0;
+      position: relative;
+
+    }
+
+    .mixitup-control-prev {
+      &:before {
+        content: "\f35a";
+        font-family: "Font Awesome 6 Free";
+        position: absolute;
+        font-size: 2rem;
+        top: 0;
+        right: 0rem;
+        transform: rotate(180deg);
+       }
+    }
+
+    .mixitup-control-next {
+
+      &:after {
+        content: "\f35a";
+        font-family: "Font Awesome 6 Free";
+        position: absolute;
+        font-size: 2rem;
+        top: 0;
+        left: 0rem;
+      }
+    }
+
+    .mixitup-control-active {
+      color: grey;
+    }
+
+    .mixitup-control-active {
+      text-decoration: none;
+    }
+}
+

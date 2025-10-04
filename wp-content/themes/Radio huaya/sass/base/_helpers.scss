@@ -1,0 +1,197 @@
+/// Mixins y Variables
+@use 'mixins' as mix;
+@use 'variables' as vars;
+@use 'functions' as fn;
+
+/// Helpers y utilidades genéricas
+/// @group helpers
+
+/// Controla la visibilidad del menú móvil.
+/// Se aplica mediante JavaScript cuando el menú se abre.
+///
+/// @example html
+/// <ul class="header__menu menu--visible"></ul>
+/* stylelint-disable-next-line selector-class-pattern */
+.menu--visible {
+  display: block !important;
+}
+
+// Visibilidad
+/// Oculta visualmente pero accesible para lectores de pantalla
+/// @example scss - Uso
+///   <div class="u-sr-only">Texto solo para lectores</div>
+.u-sr-only {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
+
+// Textos
+/// Centra texto horizontalmente
+.u-text-center {
+  text-align: center !important;
+}
+
+/// Alinea texto a la izquierda
+.u-text-left {
+  text-align: left !important;
+}
+
+/// Alinea texto a la derecha
+.u-text-right {
+  text-align: right !important;
+}
+
+// Margen utilitario
+.u-mt-1 {
+  margin-top: 1rem !important;
+}
+
+.u-mt-2 {
+  margin-top: 2rem !important;
+}
+
+.u-mb-1 {
+  margin-bottom: 1rem !important;
+}
+
+.u-mb-2 {
+  margin-bottom: 2rem !important;
+}
+
+// Estados visuales
+/// Indica que un elemento está activo
+.is-active {
+  display: block !important;
+}
+
+/// Oculta el elemento visualmente
+.is-hidden {
+  display: none !important;
+}
+
+/// Marca visual de error (puede combinarse con borde rojo, etc.)
+.has-error {
+  border-color: red !important;
+}
+
+// ==== Estilos de Texto ====
+
+// Display
+.u-display {
+  font-size: vars.$font-size-display-sm;
+  font-weight: 700;
+  letter-spacing: -2px;
+
+  @include mix.respond-to(md) {
+    font-size: vars.$font-size-display-lg;
+    letter-spacing: -3px;
+  }
+}
+
+// Título
+.u-title {
+  font-size: vars.$font-size-title-sm;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+
+  @include mix.respond-to(md) {
+    font-size: vars.$font-size-title-lg;
+  }
+}
+
+
+// Título
+.u-title-md {
+  font-size: 1.8rem;
+  letter-spacing: 0;
+  line-height: 1.4;
+
+  @include mix.respond-to(md) {
+    font-size: 2.4rem;
+  }
+}
+
+// Título SM
+.u-title-sm {
+  font-family: vars.$font-heading;
+  font-size: vars.$font-size-titlesm-sm;
+  font-weight: bold;
+  line-height: 1.2;
+
+  @include mix.respond-to(md) {
+    font-size: vars.$font-size-titlesm-lg;
+  }
+}
+
+// Cuerpo de texto
+.u-texto {
+  font-size: vars.$font-size-body-sm;
+  font-weight: 300;
+
+  @include mix.respond-to(md) {
+    font-size: vars.$font-size-body-lg;
+  }
+}
+
+// Cuerpo de texto
+.u-texto-lg { 
+  font-size: vars.$font-size-bodylg-sm;
+  font-weight: 300;
+
+  @include mix.respond-to(md) {
+    font-size: vars.$font-size-bodylg-lg;
+  }
+}
+
+// Herraminetas como: links, etiquetas, categorías y botónes,
+.u-tools {
+  font-size: 0.75rem;
+
+  @include mix.respond-to(md) {
+    font-size: 0.85rem;
+  }
+}
+
+// Color textos
+.u-color-white {
+  color: vars.$color-white;
+}
+
+.u-color-black {
+  color: vars.$color-text;
+}
+
+.u-columns {
+  display: flex;
+  flex-direction: column;
+
+  @include mix.respond-to(md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.u-w100 {
+  width: 100% !important;
+}
+
+
+audio::-webkit-media-controls-panel {
+  background-color: #fefacd;
+  border-radius: 10px;
+}
+audio::-webkit-media-controls-play-button {
+  background-color: vars.$color-primary;
+  border-radius: 50%;
+}
+
+.u-mtop-4{
+  margin-top: 4rem;
+}

@@ -1,0 +1,69 @@
+// Importación de utilidades base
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+.carrusel-cards {
+  position: relative;
+
+  .btn {
+    margin: 1rem 0 3rem;
+  }
+
+  .owl--multimedia {
+    .owl-stage {
+      margin-left: -7%;
+
+      @include mix.respond-to(md) {
+        margin-left: 0;
+      }
+    }
+
+    // Navegación: flechas laterales del carrusel
+    .owl-nav {
+      margin-top: fn.rem(40);
+      padding: 0;
+      text-align: center;
+
+      button {
+        border-radius: 50% !important;
+        font-size: 3rem !important;
+        height: 3.5rem;
+        line-height: 0;
+        margin: 0 0.5rem;
+        position: relative !important;
+        width: 3.5rem;
+
+        @include mix.respond-to(md) {
+          margin: 0 1.5rem;
+        }
+
+        span {
+          bottom: fn.rem(28);
+          color: vars.$color-white;
+          left: fn.rem(19);
+          position: absolute;
+        }
+      }
+    }
+
+    // Botones de navegación izquierda y derecha
+    .owl-prev,
+    .owl-next {
+      background-color: transparent;
+      border: 4px solid vars.$color-white !important;
+      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 31%);
+      transition: all 0.4s ease;
+
+      &:hover {
+        background-color: vars.$color-white;
+        border: 4px solid vars.$color-white !important;
+        box-shadow: 0 2px 10px 0 rgb(0 0 0 / 61%);
+
+        span {
+          color: vars.$color-white;
+        }
+      }
+    }
+  }
+}

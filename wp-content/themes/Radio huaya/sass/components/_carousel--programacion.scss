@@ -1,0 +1,74 @@
+// Importación de utilidades base
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+.tabs {
+
+  &__content {
+    padding-right: 1rem;
+  }
+}
+
+.owl--program {
+  // Botones de navegación izquierda y derecha
+
+  .owl-stage-outer {
+    height: fn.rem(93);
+
+    @include mix.respond-to(md) {
+      height: fn.rem(163);
+    }
+  }
+
+  .owl-stage {
+    left: 0;
+  }
+  .owl-nav {
+    display: block !important;
+    margin-top: fn.rem(40);
+    padding: 0;
+    text-align: center;
+
+    button {
+      border-radius: 50% !important;
+      font-size: 3rem !important;
+      height: 3.5rem;
+      line-height: 0;
+      margin: 0 0.5rem;
+      position: relative !important;
+      width: 3.5rem;
+
+      @include mix.respond-to(md) {
+        margin: 0 1.5rem !important;
+      }
+
+      span {
+        bottom: fn.rem(-8);
+        color: vars.$color-white;
+        left: fn.rem(19);
+        position: absolute;
+      }
+    }
+  }
+
+  .owl-prev,
+  .owl-next {
+    background-color: transparent;
+    border: 4px solid vars.$color-text !important;
+    transition: all 0.4s ease;
+
+    span {
+      color: vars.$color-text !important;
+    }
+
+    &:hover {
+      background-color: vars.$color-text !important;
+      border: 4px solid vars.$color-text !important;
+
+      span {
+        color: vars.$color-white !important;
+      }
+    }
+  }
+}

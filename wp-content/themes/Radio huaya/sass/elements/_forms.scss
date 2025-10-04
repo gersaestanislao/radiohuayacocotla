@@ -1,0 +1,70 @@
+// Importación de utilidades base
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+.checkbox-wrapper {
+  align-items: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  padding: 0.5rem 0;
+  transition: background-color 0.2s ease;
+
+  input[type='checkbox'] {
+    opacity: 0;
+    pointer-events: none;
+
+    // Ocultamos el checkbox real pero lo dejamos accesible
+    position: absolute;
+  }
+
+  .custom-checkbox {
+    align-items: center;
+    background-color: #d9d9d9;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    height: 2rem;
+    justify-content: center;
+    margin-right: 1rem;
+    transition: background-color 0.2s ease;
+    width: 2rem;
+
+    svg {
+      color: vars.$color-primary;
+      display: none;
+      height: 1.2rem;
+      width: 1.2rem;
+    }
+  }
+
+  span {
+    color: #111;
+    font-size: 1rem;
+    font-weight: 400;
+
+ 
+  }
+
+  // Estilo cuando está checked
+  input[type='checkbox']:checked + .custom-checkbox {
+    background-color: #d9d9d9;
+
+    svg {
+      display: block;
+    }
+  }
+
+  // Fondo activo cuando está checked (en todo el contenedor)
+  input[type='checkbox']:checked ~ span {
+    font-weight: 400;
+  }
+
+  input[type='checkbox']:checked ~ .checkbox-wrapper {
+    background-color: #e7e7e7;
+  }
+
+  &:has(input[type='checkbox']:checked) {
+    background-color: #e7e7e7;
+  }
+}

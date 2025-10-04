@@ -1,0 +1,100 @@
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+.site-footer {
+  background-color: vars.$color-primary;
+  border-top: 0.5rem vars.$color-text solid;
+  color: vars.$color-text;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 98%;
+    padding: 2rem;
+
+    @include mix.respond-to(md) {
+      max-width: 90%;
+      padding: 6rem 0;
+    }
+  }
+
+  &__column {
+    flex: 1 1 220px;
+    min-width: 200px;
+
+    &.site-footer__social {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      justify-content: flex-start;
+
+      a {
+        color: black;
+        font-size: 2rem;
+        margin-right: 0.5rem;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    max-width: 13rem;
+
+    @include mix.respond-to(md) {
+      max-width: 18rem;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  &__contact {
+    font-style: normal;
+    line-height: 1.5;
+
+    a {
+      color: black;
+      text-decoration: underline;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &__links {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+
+      a {
+        color: black;
+        text-decoration: none;
+
+        &:hover {
+          color: white;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__legales {
+    background-color: vars.$color-text;
+    color: vars.$color-white;
+    padding: 1rem 0.5rem;
+    text-align: center;
+  }
+}
