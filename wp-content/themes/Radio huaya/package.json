@@ -1,0 +1,23 @@
+{
+  "name": "radio-huaya-theme",
+  "version": "1.0.0",
+  "description": "Tema de WordPress para Radio Huaya con validaciones de accesibilidad y calidad de código.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run sass && npm run js",
+    "sass": "sass --no-source-map sass:css",
+    "js": "echo 'JS build (añade tu bundler o minificador aquí)'",
+    "lint:scss": "stylelint 'sass/**/*.scss'",
+    "lint:accessibility": "pa11y-ci",
+    "test": "npm run lint:scss && npm run lint:accessibility"
+  },
+  "devDependencies": {
+    "pa11y-ci": "^4.0.1",
+    "sass": "^1.78.0",
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.12.1"
+  }
+}

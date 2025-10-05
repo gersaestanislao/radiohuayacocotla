@@ -27,46 +27,39 @@
     }
 
     .mixitup-control-prev,
-    .mixitup-control-next,
-
-    {
+    .mixitup-control-next,{
+      
       text-decoration: none;
-      font-size: 2rem;
       color: vars.$color-primary;
       font-size: 0;
       position: relative;
+    }
 
+    .mixitup-control-prev::after,
+    .mixitup-control-prev::before { 
+      font-family: "Font Awesome 6 Free";
+      position: absolute;
+      font-size: 2rem;
+      top: 0;
     }
 
     .mixitup-control-prev {
       &:before {
         content: "\f35a";
-        font-family: "Font Awesome 6 Free";
-        position: absolute;
-        font-size: 2rem;
-        top: 0;
-        right: 0rem;
         transform: rotate(180deg);
+        right: 0;
        }
     }
 
     .mixitup-control-next {
-
       &:after {
         content: "\f35a";
-        font-family: "Font Awesome 6 Free";
-        position: absolute;
-        font-size: 2rem;
-        top: 0;
-        left: 0rem;
+        left: 0;
       }
     }
 
     .mixitup-control-active {
       color: grey;
-    }
-
-    .mixitup-control-active {
       text-decoration: none;
     }
 }
