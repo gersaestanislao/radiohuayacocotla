@@ -443,6 +443,15 @@ p {
   background-color: #000;
   color: #fefacd;
 }
+.btn--black {
+  background-color: #000;
+  border: 0.2rem solid #000;
+  color: #fefacd;
+}
+.btn--black:hover {
+  background-color: transparent;
+  color: #000;
+}
 .btn--icon i {
   color: #019640;
   font-size: 1rem;
@@ -1146,6 +1155,38 @@ input[type=text] {
   position: absolute;
   right: 0;
   top: 0;
+}
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (width >= 420px) {
+  .modal__form {
+    gap: 1.25rem;
+  }
+}
+.modal__input {
+  border: 3px solid #000;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+}
+.modal__input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+.modal__input:focus {
+  border-color: #019640;
+  box-shadow: 0 0 0 0.125rem rgba(1, 150, 64, 0.4);
+  outline: none;
+}
+.modal__submit {
+  align-self: flex-start;
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 
 .pleca {

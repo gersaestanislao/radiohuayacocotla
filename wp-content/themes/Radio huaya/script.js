@@ -267,8 +267,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 $(function () {
   const $modal = $('#myModal');
+  const $modalTriggers = $('.modal-buscador');
   const focusableElementsSelector = 'a, button, textarea, input, select, [tabindex]:not([tabindex="-1"])';
   let previousFocus = null;
+
+  if (!$modal.length) return;
 
   function trapFocus(e) {
     if (e.key !== 'Tab') return;
@@ -279,30 +282,48 @@ $(function () {
 
     if (e.shiftKey && document.activeElement === first) {
       e.preventDefault();
-      last.focus();
+      last?.focus();
     } else if (!e.shiftKey && document.activeElement === last) {
       e.preventDefault();
-      first.focus();
+      first?.focus();
     }
   }
 
-  function openModal() {
+  function openModal(event) {
+    if (!$modal.is('[hidden]')) return;
+
+    event?.preventDefault();
     previousFocus = document.activeElement;
+
+    $modalTriggers.attr('aria-expanded', 'true');
+    $('body').addClass('modal-open');
+
     $modal.removeAttr('hidden').attr('aria-hidden', 'false');
     $modal.find(focusableElementsSelector).first().focus();
+
     $(document).on('keydown', trapFocus);
   }
 
   function closeModal() {
+    if ($modal.is('[hidden]')) return;
+
     $modal.attr('hidden', true).attr('aria-hidden', 'true');
+    $modalTriggers.attr('aria-expanded', 'false');
+    $('body').removeClass('modal-open');
+
     previousFocus?.focus();
+    previousFocus = null;
+
     $(document).off('keydown', trapFocus);
   }
 
-  $('.modal-buscador').on('click', openModal);
+  $modalTriggers.on('click', openModal);
   $('#closeModal, #modalOverlay').on('click', closeModal);
   $(document).on('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
+    if (e.key === 'Escape' && !$modal.is('[hidden]')) {
+      e.preventDefault();
+      closeModal();
+    }
   });
 });
 

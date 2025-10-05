@@ -5,6 +5,7 @@
   role="dialog"
   aria-modal="true"
   aria-labelledby="modalTitle"
+  aria-hidden="true"
   hidden
 >
   <!-- Fondo oscuro clicable para cerrar el modal -->
@@ -28,15 +29,29 @@
 
     <!-- Cuerpo de texto del modal -->
     <p class="modal__text">
-    Explora los contenidos de nuestra radio comunitaria: noticias, programas, podcasts y series que recogen las voces, memorias y saberes de los pueblos originarios.
+      Explora los contenidos de nuestra radio comunitaria: noticias, programas, podcasts y series que recogen las voces, memorias y saberes de los pueblos originarios.
     </p>
-    <input type="text" placeholder="Escribe una palabra clave">
 
-
-    <!-- Botón de acción dentro del modal -->
-    <button class="btn btn--black" type="button">
-      Buscar
-    </button>
+    <form
+      class="modal__form"
+      role="search"
+      method="get"
+      action="<?php echo esc_url( home_url( '/' ) ); ?>"
+    >
+      <label class="u-sr-only" for="modalSearchInput">Buscar contenidos en Radio Huaya</label>
+      <input
+        class="modal__input"
+        type="search"
+        id="modalSearchInput"
+        name="s"
+        placeholder="Escribe una palabra clave"
+        value="<?php echo esc_attr( get_search_query() ); ?>"
+        required
+      />
+      <button class="modal__submit btn btn--black" type="submit">
+        Buscar
+      </button>
+    </form>
   </div>
 </section>
 

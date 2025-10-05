@@ -145,6 +145,17 @@ $border-btn: 0.2rem;
     }
   }
 
+  &--black {
+    background-color: vars.$color-text;
+    border: $border-btn solid vars.$color-text;
+    color: vars.$color-white;
+
+    &:hover {
+      background-color: transparent;
+      color: vars.$color-text;
+    }
+  }
+
   &--icon {
     i {
       color: vars.$color-primary;

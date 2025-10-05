@@ -41,12 +41,12 @@
 
    
       <!-- Botón para abrir el modal de busqueda -->
-      <button 
+      <button
         class="header__search-btn modal-buscador"
-        id="openModal" 
+        id="openModal"
         type="button"
         aria-expanded="false"
-        aria-controls="modalSearch"
+        aria-controls="myModal"
         aria-label="Abrir modal de búsqueda">
         <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
       </button>
@@ -91,12 +91,12 @@
         <ul>
           <li>
             <!-- Botón para abrir el modal de busqueda -->
-            <button 
+            <button
               class="header__search-btn  header__search-btn--lg modal-buscador"
-              id="openModal2" 
+              id="openModal2"
               type="button"
               aria-expanded="false"
-              aria-controls="modalSearch"
+              aria-controls="myModal"
               aria-label="Abrir modal de búsqueda">
               <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
             </button>
