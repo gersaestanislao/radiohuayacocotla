@@ -1,0 +1,43 @@
+name: 🚦 CI – Validaciones del tema Radio Huaya
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    name: Validar SCSS y Accesibilidad
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: wp-content/themes/Radio huaya
+
+    steps:
+      # 1️⃣ Descarga el código del repositorio
+      - name: 📦 Checkout del código
+        uses: actions/checkout@v4
+
+      # 2️⃣ Configura Node.js versión 18
+      - name: 🧩 Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # 3️⃣ Instala las dependencias definidas en package.json
+      - name: 📚 Instalar dependencias
+        run: npm install
+
+      # 4️⃣ Ejecuta Stylelint sobre tus archivos SCSS
+      - name: 🎨 Analizar SCSS con Stylelint
+        run: npm run lint:scss
+
+      # 5️⃣ Ejecuta pruebas de accesibilidad con Pa11y
+      - name: ♿ Pruebas de accesibilidad (Pa11y)
+        run: npm run lint:accessibility
+
+      # 6️⃣ Construye el CSS y JS del tema (opcional, para preparar deploy)
+      - name: 🧱 Compilar assets
+        run: npm run build
