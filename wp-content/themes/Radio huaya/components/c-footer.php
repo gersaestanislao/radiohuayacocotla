@@ -102,7 +102,7 @@
 </a>
 
 <!-- Inclusión del componente modal -->
-<?php include('components/moduls/m-modal.php'); ?>
+<?php include('moduls/m-modal.php'); ?>
 
 <!-- Carga de scripts externos y locales -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
