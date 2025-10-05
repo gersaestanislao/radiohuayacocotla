@@ -4,7 +4,6 @@
 @use '../base/functions' as fn;
 
 .tabs {
-
   &__content {
     padding-right: 1rem;
   }
@@ -24,6 +23,7 @@
   .owl-stage {
     left: 0;
   }
+
   .owl-nav {
     display: block !important;
     margin-top: fn.rem(40);

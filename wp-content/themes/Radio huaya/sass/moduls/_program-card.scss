@@ -10,8 +10,8 @@ $color-active: #00c227;
   background-color: white;
   border: 1px solid #eee;
   display: flex;
-  width: fn.rem(135);
   height: 6rem;
+  width: fn.rem(135);
 
   @include mix.respond-to(md) {
     height: 10rem;

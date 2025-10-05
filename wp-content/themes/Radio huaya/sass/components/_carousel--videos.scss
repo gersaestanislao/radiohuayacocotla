@@ -16,13 +16,15 @@
 
   .owl-stage {
     left: -1.5rem;
+
     @include mix.respond-to(md) {
       left: 0;
     }
   } 
+
   .m-title__btn--videos {
-    max-width: 90%;
     margin: 1rem 0;
+    max-width: 90%;
 
      
     @include mix.respond-to(md) {
@@ -32,21 +34,21 @@
 
   &__controls {
     background: vars.$color-primary;
-    height: 3.5rem;
-    width: 3.5rem;
     border-radius: 50%;
+    box-shadow: 0 0 12px -3px rgb(0 0 0 / 85%);
     color: vars.$color-white;
+    height: 3.5rem;
     position: absolute;
     top: 35%;
+    width: 3.5rem;
     z-index: 9;
-    box-shadow: 0px 0px 12px -3px rgba(0,0,0,0.85);
 
    
     @include mix.respond-to(md) {
-      height: 4rem;
-      width: 4rem;
-      top: 36%;
       display: inherit;
+      height: 4rem;
+      top: 36%;
+      width: 4rem;
     } 
 
 

@@ -42,7 +42,7 @@ $bg-grey: #efefef;
     }
 
      @include mix.respond-to(lg) {
-      margin: 2rem 3% 2rem;
+      margin: 2rem 3%;
      }
   }
 

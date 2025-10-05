@@ -19,8 +19,8 @@
   }
 
   &__controls {
-   position: initial;
    display: flex !important;
+   position: initial;
   }
 
   &__shadow {
@@ -206,8 +206,8 @@
   background-color: vars.$color-text;
   border-radius: vars.$border-base-radio;
   color: white;
-  position: relative;
   padding: 1rem;
+  position: relative;
   width: 100%;
 
 
@@ -221,14 +221,13 @@
   }
 
   &__select {
-
-      position: relative;
       margin: .5rem 0 1rem;
+      position: relative;
 
      @include mix.respond-to(md) {
        position: absolute;
-      top: 2.7rem;
       right: 2rem;
+      top: 2.7rem;
      }
   }
 

@@ -13,17 +13,16 @@
   }
 
   &__grid {
-    width: 100%;
-    margin: auto;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex-flow: column wrap;
+    margin: auto;
     padding-right: 1rem;
+    width: 100%;
 
     @include mix.respond-to(md) {
-        width: 90%;
         flex-direction: row;
         gap: 2.5rem;
+        width: 90%;
     }
 
   }
@@ -55,11 +54,11 @@
 
   &__item {
     background: transparent;
+    border-bottom: 1px solid #ffffff42;
+    color: vars.$color-white;
     display: flex;
     flex-direction: column;
     padding: .75rem 0;
-    color: vars.$color-white;
-    border-bottom: 1px solid #ffffff42;
   }
 
   &__media {
@@ -90,18 +89,18 @@
 
 
   &__actions {
-    text-align: center;
     margin-top: 2rem;
+    text-align: center;
   }
 
   &__btn-link {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
     border: 2px solid #fff;
     border-radius: 0.5rem;
     color: #fff;
-    text-decoration: none;
+    display: inline-block;
     font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
 
     &:hover,
     &:focus {

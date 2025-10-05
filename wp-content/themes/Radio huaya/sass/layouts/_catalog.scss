@@ -8,15 +8,15 @@
 
 .catalog {
   @include mix.respond-to(md) {
-   max-width: fn.rem(1440);
    margin: auto;
+   max-width: fn.rem(1440);
    padding-top: 2rem;
 
    &__eyetcher{
-    text-align: center;
     margin: auto;
-    max-width: fn.rem(990);
     margin-bottom: 5rem;
+    max-width: fn.rem(990);
+    text-align: center;
 
    }
 

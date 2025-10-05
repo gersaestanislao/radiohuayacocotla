@@ -12,8 +12,8 @@
     }
 
     button {
-      padding: 0 1rem;
       cursor: pointer;
+      padding: 0 1rem;
       transition: all ease .4s;
 
       &:hover {
@@ -28,31 +28,30 @@
 
     .mixitup-control-prev,
     .mixitup-control-next,{
-      
-      text-decoration: none;
       color: vars.$color-primary;
       font-size: 0;
       position: relative;
+      text-decoration: none;
     }
 
     .mixitup-control-prev::after,
     .mixitup-control-prev::before { 
       font-family: "Font Awesome 6 Free";
-      position: absolute;
       font-size: 2rem;
+      position: absolute;
       top: 0;
     }
 
     .mixitup-control-prev {
-      &:before {
+      &::before {
         content: "\f35a";
-        transform: rotate(180deg);
         right: 0;
+        transform: rotate(180deg);
        }
     }
 
     .mixitup-control-next {
-      &:after {
+      &::after {
         content: "\f35a";
         left: 0;
       }

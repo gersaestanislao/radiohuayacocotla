@@ -173,8 +173,7 @@
   flex-direction: column;
 
   @include mix.respond-to(md) {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
   }
 }
 
@@ -187,6 +186,7 @@ audio::-webkit-media-controls-panel {
   background-color: #fefacd;
   border-radius: 10px;
 }
+
 audio::-webkit-media-controls-play-button {
   background-color: vars.$color-primary;
   border-radius: 50%;
