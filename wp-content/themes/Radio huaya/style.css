@@ -759,3 +759,127 @@ body {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* Plantilla de contacto */
+.contact-template {
+  padding: 2rem 1.5rem 3rem;
+}
+
+.contact-template__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (width >= 768px) {
+  .contact-template__wrapper {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.contact-template__map,
+.contact-template__form {
+  flex: 1 1 0;
+}
+
+.contact-template__map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border-radius: 12px;
+  border: 0;
+}
+
+.contact-template__form {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-template__title {
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
+  margin: 0;
+}
+
+@media (width >= 768px) {
+  .contact-template__title {
+    font-size: 2.5rem;
+  }
+}
+
+.contact-template__content {
+  font-size: 1rem;
+  color: #333;
+}
+
+.contact-template__form-fields {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-template__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contact-template__label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.contact-template__input,
+.contact-template__textarea {
+  width: 100%;
+  border: 1px solid #c7c7c7;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-template__input:focus,
+.contact-template__textarea:focus {
+  outline: none;
+  border-color: #006699;
+  box-shadow: 0 0 0 3px rgba(0, 102, 153, 0.15);
+}
+
+.contact-template__textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+.contact-template__actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.contact-template__submit {
+  background-color: #006699;
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 0.85rem 2.5rem;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-template__submit:hover,
+.contact-template__submit:focus {
+  background-color: #004f73;
+  transform: translateY(-1px);
+}
+
+.contact-template__submit:active {
+  transform: translateY(0);
+}
