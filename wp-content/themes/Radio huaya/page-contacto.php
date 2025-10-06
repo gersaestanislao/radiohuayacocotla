@@ -3,8 +3,7 @@
  * Template Name: Plantilla de contacto
  */
 
-get_header();
-?>
+ include('components/c-header.php'); ?>
 
 <main id="main" class="contact-template">
     <?php if ( have_posts() ) : ?>
@@ -57,4 +56,4 @@ get_header();
 </main>
 
 <?php
-get_footer();
+include('components/c-footer.php'); ?>
