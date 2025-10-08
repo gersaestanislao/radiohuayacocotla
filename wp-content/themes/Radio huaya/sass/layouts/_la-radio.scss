@@ -1,0 +1,231 @@
+@use '../base/variables' as vars;
+@use '../base/mixins' as mix;
+@use '../base/functions' as fn;
+
+.radio-page {
+  background-color: #f6f2e8;
+  color: vars.$color-text;
+
+  &__body {
+    margin: 0 auto;
+    max-width: fn.rem(1140);
+    padding: fn.rem(48) fn.rem(18) fn.rem(96);
+
+    @include mix.respond-to(md) {
+      padding: fn.rem(72) fn.rem(32) fn.rem(120);
+    }
+
+    @include mix.respond-to(lg) {
+      padding-inline: fn.rem(24);
+    }
+  }
+
+  &__content {
+    margin-top: fn.rem(64);
+
+    > * + * {
+      margin-top: fn.rem(16);
+    }
+  }
+}
+
+.radio-hero {
+  align-items: flex-end;
+  background: var(--radio-hero-bg, #1a1a1a) center/cover no-repeat;
+  color: vars.$color-white;
+  display: flex;
+  isolation: isolate;
+  min-height: clamp(17.5rem, 50vh, 26rem);
+  position: relative;
+
+  &::before {
+    background: linear-gradient(180deg, rgb(0 0 0 / 45%) 0%, rgb(0 0 0 / 75%) 100%);
+    content: '';
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__overlay {
+    display: none;
+  }
+
+  &__content {
+    padding: fn.rem(48) fn.rem(24) fn.rem(56);
+    position: relative;
+
+    @include mix.respond-to(md) {
+      padding: fn.rem(72) fn.rem(64);
+      max-width: fn.rem(640);
+    }
+  }
+
+  &__eyebrow {
+    color: vars.$color-yellow-1;
+    display: inline-flex;
+    font-size: fn.rem(14);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    margin-bottom: fn.rem(12);
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-family: vars.$font-heading;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin: 0 0 fn.rem(16);
+    text-transform: uppercase;
+  }
+
+  &__description {
+    font-size: clamp(1rem, 0.7vw + 0.9rem, 1.25rem);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 38ch;
+  }
+}
+
+.radio-section {
+  align-items: center;
+  display: grid;
+  gap: fn.rem(24);
+  margin-bottom: fn.rem(64);
+
+  @include mix.respond-to(md) {
+    gap: fn.rem(40);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  &__media {
+    border-radius: fn.rem(18);
+    overflow: hidden;
+
+    @include mix.respond-to(md) {
+      height: 100%;
+    }
+  }
+
+  &__image {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__content {
+    background: #f1e8d8;
+    border-radius: fn.rem(20);
+    box-shadow: 0 fn.rem(18) fn.rem(48) rgb(17 17 17 / 8%);
+    padding: fn.rem(28) fn.rem(24);
+
+    @include mix.respond-to(md) {
+      padding: fn.rem(40);
+    }
+  }
+
+  &__eyebrow {
+    color: vars.$color-secondary;
+    display: inline-flex;
+    font-size: fn.rem(14);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    margin-bottom: fn.rem(12);
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-family: vars.$font-heading;
+    font-size: clamp(1.75rem, 1.4vw + 1.2rem, 2.5rem);
+    line-height: 1.2;
+    margin: 0 0 fn.rem(16);
+  }
+
+  &__description {
+    color: #423c33;
+    font-size: clamp(1rem, 0.4vw + 0.95rem, 1.15rem);
+    line-height: 1.7;
+
+    p {
+      margin: 0;
+
+      & + p {
+        margin-top: fn.rem(16);
+      }
+    }
+  }
+
+  &--image-right {
+    @include mix.respond-to(md) {
+      .radio-section__media {
+        order: 2;
+      }
+
+      .radio-section__content {
+        order: 1;
+      }
+    }
+  }
+}
+
+.radio-values {
+  background: #ede3d1;
+  border-radius: fn.rem(24);
+  box-shadow: 0 fn.rem(18) fn.rem(48) rgb(17 17 17 / 6%);
+  margin: fn.rem(80) 0;
+  padding: fn.rem(40) fn.rem(24);
+
+  @include mix.respond-to(md) {
+    padding: fn.rem(56) fn.rem(48);
+  }
+
+  &__header {
+    margin: 0 auto fn.rem(40);
+    max-width: fn.rem(620);
+    text-align: center;
+  }
+
+  &__title {
+    font-family: vars.$font-heading;
+    font-size: clamp(1.75rem, 1.2vw + 1.3rem, 2.5rem);
+    letter-spacing: 0.05em;
+    margin: 0 0 fn.rem(12);
+    text-transform: uppercase;
+  }
+
+  &__description {
+    color: #4a443a;
+    font-size: clamp(1rem, 0.3vw + 0.95rem, 1.125rem);
+    margin: 0;
+  }
+
+  &__grid {
+    display: grid;
+    gap: fn.rem(24);
+
+    @include mix.respond-to(md) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  &__item {
+    background: #fff;
+    border-radius: fn.rem(20);
+    box-shadow: 0 fn.rem(14) fn.rem(36) rgb(0 0 0 / 7%);
+    padding: fn.rem(28) fn.rem(24);
+  }
+
+  &__item-title {
+    font-family: vars.$font-heading;
+    font-size: clamp(1.25rem, 0.8vw + 1rem, 1.75rem);
+    margin: 0 0 fn.rem(12);
+    text-transform: uppercase;
+  }
+
+  &__item-text {
+    color: #524b40;
+    font-size: clamp(0.95rem, 0.3vw + 0.9rem, 1.0625rem);
+    line-height: 1.65;
+    margin: 0;
+  }
+}
