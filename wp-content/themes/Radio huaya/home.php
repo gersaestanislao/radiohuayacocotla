@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Plantilla dinámica
+ * Template Name: home
  *
  * Este archivo define una plantilla de página en WordPress que carga componentes
  * dinámicamente según la estructura flexible de campos definidos con ACF (Advanced Custom Fields).

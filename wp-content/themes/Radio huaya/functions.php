@@ -1,4 +1,6 @@
 <?php
+
+add_theme_support('templates');
 // Registro support----------------------------------------
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'post-formats', array(
@@ -139,13 +141,6 @@ function content($limit) {
   $content = str_replace(']]>', ']]&gt;', $content);
   return $content;
 }
-
-
-
-
-
-
-
 
 
 ?>
