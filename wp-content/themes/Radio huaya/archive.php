@@ -26,11 +26,6 @@ include('components/c-header.php'); ?>
                     </h2>
                 </header>
 
-                <p class="catalog__eyetcherDescript">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, autem! Amet, quaerat aliquid illo perspiciatis nemo error neque sequi, voluptatem nobis, pariatur laboriosam consequuntur debitis similique consectetur. Vitae, similique quam?
-                </p>  
-
-
         </article>
 
         <div class="contenedor-cards__grid">

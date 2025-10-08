@@ -11,10 +11,11 @@
    margin: auto;
    max-width: fn.rem(1440);
    padding-top: 2rem;
+  }
 
    &__eyetcher{
     margin: auto;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     max-width: fn.rem(990);
     text-align: center;
 
@@ -25,11 +26,12 @@
     text-transform: capitalize;
 
     @include mix.respond-to(md) {
+      font-size: 3rem;
+      text-transform: capitalize;
+    }
+
+    @include mix.respond-to(lg) {
       font-size: 4rem;
     }
-   }
-
-   &__eyetcherDescript{}
-                       
-}
+   }                   
 }

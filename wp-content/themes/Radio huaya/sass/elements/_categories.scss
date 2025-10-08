@@ -4,15 +4,13 @@
 @use '../base/functions' as fn;
 
 // variables  locales
-$cat-1: #ff6900;
+$cat-1: vars.$color-white;
 $cat-2: #0f6131;
 $cat-3: vars.$color-accent;
 $cat-4: vars.$color-yellow-1;
 $cat-5: vars.$color-yellow-2;
 
 .categories {
-  border: 0.3rem solid transparent;
-  border-radius: 0.3rem;
   color: vars.$color-text;
   display: inline-block;
   font-weight: bold;
@@ -27,7 +25,7 @@ $cat-5: vars.$color-yellow-2;
 
   &__cat-1 {
     background-color: $cat-1;
-    color: vars.$color-white;
+    color: vars.$color-text;
     transition: all ease .4s;
 
     &:hover{
