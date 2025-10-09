@@ -141,6 +141,51 @@ function content($limit) {
   $content = str_replace(']]>', ']]&gt;', $content);
   return $content;
 }
+/**
+ * Añade etiquetas Open Graph y Twitter Card para compartir en redes sociales.
+ */
+function rh_add_social_meta_tags() {
+  if ( is_singular() ) { // Solo en posts o páginas individuales
+      global $post;
+
+      $title       = esc_attr( get_the_title( $post ) );
+      $description = esc_attr( wp_strip_all_tags( get_the_excerpt( $post ) ) );
+      $url         = esc_url( get_permalink( $post ) );
+
+      // Imagen destacada o una imagen por defecto
+      if ( has_post_thumbnail( $post ) ) {
+          $image = esc_url( get_the_post_thumbnail_url( $post, 'large' ) );
+      } else {
+          $image = esc_url( get_template_directory_uri() . '/images/default-og.jpg' );
+      }
+
+      // Nombre del sitio
+      $site_name = esc_attr( get_bloginfo( 'name' ) );
+      ?>
+      <!-- ============================= -->
+      <!-- META TAGS PARA REDES SOCIALES -->
+      <!-- ============================= -->
+
+      <!-- Facebook / Instagram (Open Graph) -->
+      <meta property="og:type" content="article" />
+      <meta property="og:site_name" content="<?php echo $site_name; ?>" />
+      <meta property="og:title" content="<?php echo $title; ?>" />
+      <meta property="og:description" content="<?php echo $description; ?>" />
+      <meta property="og:url" content="<?php echo $url; ?>" />
+      <meta property="og:image" content="<?php echo $image; ?>" />
+
+      <!-- Twitter Card -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="<?php echo $title; ?>" />
+      <meta name="twitter:description" content="<?php echo $description; ?>" />
+      <meta name="twitter:image" content="<?php echo $image; ?>" />
+
+      <!-- Meta genérica -->
+      <meta name="description" content="<?php echo $description; ?>" />
+      <?php
+  }
+}
+add_action( 'wp_head', 'rh_add_social_meta_tags', 5 );
 
 
 ?>
