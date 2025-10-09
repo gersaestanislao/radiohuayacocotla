@@ -3,7 +3,7 @@
 @use 'base/reset';
 @use 'base/variables' as vars;
 @use 'base/mixins' as mix;
-@use 'base/fonts';
+@use 'base/fonts'; 
 
 // Carga los contenderores de forma decentralizada, categorias, textos, botones, links
 @use 'elements';
@@ -18,7 +18,7 @@
 @use 'layouts';
 
 body {
-  color: vars.$color-text;
+  color: vars.$color-text; 
   font-family: vars.$font-base;
   margin: 0;
 }
