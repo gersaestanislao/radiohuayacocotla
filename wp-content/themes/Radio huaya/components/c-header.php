@@ -73,16 +73,7 @@
       <li class="header__menu--desktop-item"><a href="<?php echo site_url() ; ?>/la-radio">La Radio</a></li>
       <li class="header__menu--desktop-item"><a href="<?php echo site_url() ; ?>/contacto">Contacto</a></li>
 
-      <!-- Redes sociales -->
-      <li class="header__menu--desktop-item header__menu--desktop-item--redes">
-        <ul>
-          <li><a target="_blank" href="https://www.instagram.com/fomento_radiohuaya/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-          <li><a target="_blank" href="https://www.facebook.com/lavozcampesinaFM/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
-          <li><a target="_blank" href="https://twitter.com/radio_huaya?lang=es" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a></li>
-          <li><a target="_blank" href="https://www.youtube.com/channel/UCgTanyYlUa3Ztx-3OrcQyjQ" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
-          <li><a target="_blank" href="https://wa.me/7713557758" aria-label="Whatsapp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
-        </ul>
-      </li>
+
 
       <li class="header__menu--desktop-item"><a class="btn--main" href="<?php echo site_url() ; ?>/donaciones">Donaciones</a></li>
       
@@ -103,7 +94,16 @@
           </li>
         </ul>
       </li>
-
+      <!-- Redes sociales -->
+      <li class="header__menu--desktop-item header__menu--desktop-item--redes">
+        <ul>
+          <li><a target="_blank" href="https://www.instagram.com/fomento_radiohuaya/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a target="_blank" href="https://www.facebook.com/lavozcampesinaFM/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+          <li><a target="_blank" href="https://twitter.com/radio_huaya?lang=es" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a></li>
+          <li><a target="_blank" href="https://www.youtube.com/channel/UCgTanyYlUa3Ztx-3OrcQyjQ" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+          <li><a target="_blank" href="https://wa.me/7713557758" aria-label="Whatsapp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+        </ul>
+      </li>
 
     </ul>
   </nav>

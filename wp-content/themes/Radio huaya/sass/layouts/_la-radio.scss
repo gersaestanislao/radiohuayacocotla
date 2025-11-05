@@ -3,12 +3,12 @@
 @use '../base/functions' as fn;
 
 .radio-page {
-  background-color: #f6f2e8;
+  background-color: white;
   color: vars.$color-text;
 
   &__body {
     margin: 0 auto;
-    max-width: fn.rem(1140);
+    max-width: fn.rem(1440);
     padding: fn.rem(48) fn.rem(18) fn.rem(96);
 
     @include mix.respond-to(md) {
@@ -30,13 +30,14 @@
 }
 
 .radio-hero {
-  align-items: flex-end;
+  align-items: center;
   background: var(--radio-hero-bg, #1a1a1a) center/cover no-repeat;
   color: vars.$color-white;
   display: flex;
   isolation: isolate;
   min-height: clamp(17.5rem, 50vh, 26rem);
   position: relative;
+  justify-content: center;
 
   &::before {
     background: linear-gradient(180deg, rgb(0 0 0 / 45%) 0%, rgb(0 0 0 / 75%) 100%);
@@ -75,7 +76,7 @@
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     line-height: 1.1;
     margin: 0 0 fn.rem(16);
-    text-transform: uppercase;
+
   }
 
   &__description {
@@ -90,7 +91,7 @@
   align-items: center;
   display: grid;
   gap: fn.rem(24);
-  margin-bottom: fn.rem(64);
+  margin-bottom: fn.rem(98);
 
   @include mix.respond-to(md) {
     gap: fn.rem(40);
@@ -98,8 +99,9 @@
   }
 
   &__media {
-    border-radius: fn.rem(18);
+    border-radius: fn.rem(9);
     overflow: hidden;
+    border: 3px solid black ;
 
     @include mix.respond-to(md) {
       height: 100%;
@@ -114,9 +116,7 @@
   }
 
   &__content {
-    background: #f1e8d8;
     border-radius: fn.rem(20);
-    box-shadow: 0 fn.rem(18) fn.rem(48) rgb(17 17 17 / 8%);
     padding: fn.rem(28) fn.rem(24);
 
     @include mix.respond-to(md) {
@@ -125,9 +125,9 @@
   }
 
   &__eyebrow {
-    color: vars.$color-secondary;
+    color: vars.$color-text;
     display: inline-flex;
-    font-size: fn.rem(14);
+    font-size: fn.rem(16);
     font-weight: 600;
     letter-spacing: 0.06em;
     margin-bottom: fn.rem(12);
@@ -137,7 +137,7 @@
   &__title {
     font-family: vars.$font-heading;
     font-size: clamp(1.75rem, 1.4vw + 1.2rem, 2.5rem);
-    line-height: 1.2;
+    line-height: 1;
     margin: 0 0 fn.rem(16);
   }
 
@@ -169,7 +169,7 @@
 }
 
 .radio-values {
-  background: #ede3d1;
+  background: #e0e0e0;
   border-radius: fn.rem(24);
   box-shadow: 0 fn.rem(18) fn.rem(48) rgb(17 17 17 / 6%);
   margin: fn.rem(80) 0;
@@ -189,8 +189,7 @@
     font-family: vars.$font-heading;
     font-size: clamp(1.75rem, 1.2vw + 1.3rem, 2.5rem);
     letter-spacing: 0.05em;
-    margin: 0 0 fn.rem(12);
-    text-transform: uppercase;
+    margin: 0 0 fn.rem(12)
   }
 
   &__description {
@@ -209,17 +208,18 @@
   }
 
   &__item {
-    background: #fff;
+    background: #ffffff;
     border-radius: fn.rem(20);
     box-shadow: 0 fn.rem(14) fn.rem(36) rgb(0 0 0 / 7%);
     padding: fn.rem(28) fn.rem(24);
+    text-align: center;
   }
 
   &__item-title {
-    font-family: vars.$font-heading;
-    font-size: clamp(1.25rem, 0.8vw + 1rem, 1.75rem);
+    font-family: vars.$font-base;
+    font-size: clamp(.8rem, 0.8vw + 1rem, 1.5rem);
     margin: 0 0 fn.rem(12);
-    text-transform: uppercase;
+
   }
 
   &__item-text {

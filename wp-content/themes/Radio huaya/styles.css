@@ -1543,18 +1543,18 @@ body.modal-open {
 }
 @media (width >= 1440px) {
   .header__logo-link {
-    width: 15rem;
+    width: 12.5rem;
   }
 }
 .header__nav {
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 0.5rem 1rem 0.5rem 0;
 }
 @media (width >= 768px) {
   .header__nav {
-    padding: 1rem 5%;
+    padding: 1rem;
   }
 }
 .header__menu-btn {
@@ -3052,12 +3052,12 @@ body.modal-open {
 }
 
 .radio-page {
-  background-color: #f6f2e8;
+  background-color: white;
   color: #000;
 }
 .radio-page__body {
   margin: 0 auto;
-  max-width: 71.25rem;
+  max-width: 90rem;
   padding: 3rem 1.125rem 6rem;
 }
 @media (width >= 768px) {
@@ -3078,13 +3078,14 @@ body.modal-open {
 }
 
 .radio-hero {
-  align-items: flex-end;
+  align-items: center;
   background: var(--radio-hero-bg, #1a1a1a) center/cover no-repeat;
   color: #fefacd;
   display: flex;
   isolation: isolate;
   min-height: clamp(17.5rem, 50vh, 26rem);
   position: relative;
+  justify-content: center;
 }
 .radio-hero::before {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.75) 100%);
@@ -3120,7 +3121,6 @@ body.modal-open {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   line-height: 1.1;
   margin: 0 0 1rem;
-  text-transform: uppercase;
 }
 .radio-hero__description {
   font-size: clamp(1rem, 0.7vw + 0.9rem, 1.25rem);
@@ -3133,7 +3133,7 @@ body.modal-open {
   align-items: center;
   display: grid;
   gap: 1.5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 6.125rem;
 }
 @media (width >= 768px) {
   .radio-section {
@@ -3142,8 +3142,9 @@ body.modal-open {
   }
 }
 .radio-section__media {
-  border-radius: 1.125rem;
+  border-radius: 0.5625rem;
   overflow: hidden;
+  border: 3px solid black;
 }
 @media (width >= 768px) {
   .radio-section__media {
@@ -3157,9 +3158,7 @@ body.modal-open {
   width: 100%;
 }
 .radio-section__content {
-  background: #f1e8d8;
   border-radius: 1.25rem;
-  box-shadow: 0 1.125rem 3rem rgba(17, 17, 17, 0.08);
   padding: 1.75rem 1.5rem;
 }
 @media (width >= 768px) {
@@ -3168,9 +3167,9 @@ body.modal-open {
   }
 }
 .radio-section__eyebrow {
-  color: #9dbf21;
+  color: #000;
   display: inline-flex;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   margin-bottom: 0.75rem;
@@ -3179,7 +3178,7 @@ body.modal-open {
 .radio-section__title {
   font-family: "Oswald", sans-serif;
   font-size: clamp(1.75rem, 1.4vw + 1.2rem, 2.5rem);
-  line-height: 1.2;
+  line-height: 1;
   margin: 0 0 1rem;
 }
 .radio-section__description {
@@ -3203,7 +3202,7 @@ body.modal-open {
 }
 
 .radio-values {
-  background: #ede3d1;
+  background: #e0e0e0;
   border-radius: 1.5rem;
   box-shadow: 0 1.125rem 3rem rgba(17, 17, 17, 0.06);
   margin: 5rem 0;
@@ -3224,7 +3223,6 @@ body.modal-open {
   font-size: clamp(1.75rem, 1.2vw + 1.3rem, 2.5rem);
   letter-spacing: 0.05em;
   margin: 0 0 0.75rem;
-  text-transform: uppercase;
 }
 .radio-values__description {
   color: #4a443a;
@@ -3241,16 +3239,16 @@ body.modal-open {
   }
 }
 .radio-values__item {
-  background: #fff;
+  background: #ffffff;
   border-radius: 1.25rem;
   box-shadow: 0 0.875rem 2.25rem rgba(0, 0, 0, 0.07);
   padding: 1.75rem 1.5rem;
+  text-align: center;
 }
 .radio-values__item-title {
-  font-family: "Oswald", sans-serif;
-  font-size: clamp(1.25rem, 0.8vw + 1rem, 1.75rem);
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(0.8rem, 0.8vw + 1rem, 1.5rem);
   margin: 0 0 0.75rem;
-  text-transform: uppercase;
 }
 .radio-values__item-text {
   color: #524b40;

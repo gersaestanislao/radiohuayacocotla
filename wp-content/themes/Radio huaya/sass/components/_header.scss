@@ -3,7 +3,7 @@
 @use '../base/functions' as fn;
 
 // variable locales
-$widht-lg: fn.rem(240);
+$widht-lg: fn.rem(200);
 $widht-sm: fn.rem(140);
 
 .header {
@@ -41,11 +41,11 @@ $widht-sm: fn.rem(140);
   &__nav {
     align-items: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly; 
     padding: 0.5rem 1rem 0.5rem 0;
 
     @include mix.respond-to(md) {
-      padding: 1rem 5%;
+      padding: 1rem;
     }
   }
 
