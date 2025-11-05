@@ -62,7 +62,7 @@
   }
 
   &__eyebrow {
-    color: vars.$color-yellow-1;
+    color: vars.$color-primary;
     display: inline-flex;
     font-size: fn.rem(14);
     font-weight: 600;
@@ -125,7 +125,7 @@
   }
 
   &__eyebrow {
-    color: vars.$color-text;
+    color: vars.$color-primary;
     display: inline-flex;
     font-size: fn.rem(16);
     font-weight: 600;
@@ -188,7 +188,6 @@
   &__title {
     font-family: vars.$font-heading;
     font-size: clamp(1.75rem, 1.2vw + 1.3rem, 2.5rem);
-    letter-spacing: 0.05em;
     margin: 0 0 fn.rem(12)
   }
 

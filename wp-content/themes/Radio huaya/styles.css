@@ -2454,7 +2454,8 @@ body.modal-open {
   display: flex;
   flex-wrap: wrap;
   gap: 0;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 1rem;
   padding-bottom: 0.75rem;
   width: 100%;
 }
@@ -2477,7 +2478,8 @@ body.modal-open {
 }
 @media (width >= 768px) {
   .tabs__tab {
-    width: 13.7%;
+    width: auto;
+    padding: 0.75rem 4rem;
   }
 }
 .tabs__tab:hover, .tabs__tab:focus {
@@ -2698,6 +2700,75 @@ body.modal-open {
 .noticiero__btn-link:hover, .noticiero__btn-link:focus {
   background: #fff;
   color: #000;
+}
+
+.accordion {
+  border-radius: 4px;
+  overflow: hidden;
+}
+.accordion__item {
+  border-bottom: 2px solid #fff;
+}
+.accordion__item:last-child {
+  border-bottom: none;
+}
+.accordion__header {
+  margin: 0;
+}
+.accordion__trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background-color: #e0e0e0;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+.accordion__trigger:hover, .accordion__trigger:focus-visible {
+  background-color: lightgray;
+  outline: none;
+}
+.accordion__trigger[aria-expanded=true] .accordion__icon {
+  transform: rotate(180deg);
+}
+.accordion__title {
+  font-size: 1.2rem;
+  color: #000;
+}
+.accordion__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  background: url("data:image/svg+xml,%3Csvg fill='019640' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat center;
+  transition: transform 0.3s ease;
+}
+.accordion__panel {
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.accordion__panel a {
+  color: #009639;
+  text-decoration: underline;
+}
+.accordion__panel a:hover {
+  text-decoration: none;
+}
+.accordion__panel h3 {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+.accordion__panel ul {
+  margin: 0.5rem 0 0 1rem;
+  list-style: none;
+}
+.accordion__panel ul li {
+  margin: 0.25rem 0;
 }
 
 /* stylelint-disable selector-class-pattern */
@@ -3108,7 +3179,7 @@ body.modal-open {
   }
 }
 .radio-hero__eyebrow {
-  color: #fef373;
+  color: #019640;
   display: inline-flex;
   font-size: 0.875rem;
   font-weight: 600;
@@ -3167,7 +3238,7 @@ body.modal-open {
   }
 }
 .radio-section__eyebrow {
-  color: #000;
+  color: #019640;
   display: inline-flex;
   font-size: 1rem;
   font-weight: 600;
@@ -3221,7 +3292,6 @@ body.modal-open {
 .radio-values__title {
   font-family: "Oswald", sans-serif;
   font-size: clamp(1.75rem, 1.2vw + 1.3rem, 2.5rem);
-  letter-spacing: 0.05em;
   margin: 0 0 0.75rem;
 }
 .radio-values__description {

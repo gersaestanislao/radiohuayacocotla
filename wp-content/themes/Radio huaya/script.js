@@ -411,6 +411,34 @@ $(document).ready(function () {
   });
 
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const triggers = document.querySelectorAll('.accordion__trigger');
+  
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const expanded = trigger.getAttribute('aria-expanded') === 'true';
+        const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+  
+        // Cierra todos los ítems
+        triggers.forEach(btn => {
+          const panelId = btn.getAttribute('aria-controls');
+          btn.setAttribute('aria-expanded', 'false');
+          document.getElementById(panelId).hidden = true;
+        });
+  
+        // Si el actual estaba cerrado, lo abre
+        if (!expanded) {
+          trigger.setAttribute('aria-expanded', 'true');
+          panel.hidden = false;
+        }
+      });
+    });
+  });
+  
+
+  
+
+
   const toggleBtn = document.getElementById('filters-toggle');
   const filtersContent = document.getElementById('filters-content');
 
@@ -433,4 +461,6 @@ $(document).ready(function () {
   };
   mediaQuery.addEventListener('change', handleResize);
   handleResize(); // inicializa
+
+
 
